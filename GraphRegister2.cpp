@@ -8,27 +8,27 @@ extern std::mt19937_64 rng;
 
 // GraphRegister with additional constructors and related functions.
 
-void GraphRegister2::add_node(QubitVertex node, hash_set<VertexIndex> neighbors) {
+void GraphRegister2::add_node(const QubitVertex& node) {
     vertices.push_back(node);
+
+}
+void GraphRegister2::add_node_with_edges(const QubitVertex& node, const hash_set<VertexIndex>& neighbors){
     hash_set<VertexIndex>::iterator i = neighbors.begin();
     while(i != neighbors.end()) {
-        add_edge(node, neighbors.find());
+        add_edge(node, neighbors.find(i));
     }
 }
 void GraphRegister2::add_node(QubitVertex node) {
     vertices.push_back(node);
 }
-GraphRegister2::GraphRegister2(Stabilizer stab) : GraphRegister(stab.numQubits){
-    // TODO
-}
 
 GraphRegister2::GraphRegister2(const GraphRegister& g1, GraphRegister g2) : GraphRegister(g1) {
     for(auto & vertex : g2.vertices){
-        this->add_node(vertex, vertex.neighbors);
+        add_node_with_edges(vertex, vertex.neighbors);
     }
 }
 
-GraphRegister2::GraphRegister2(double probability, std::vector<size_type>) : GraphRegister(x * y * z){
+GraphRegister2::GraphRegister2(double probability, int x, int y, int z) : GraphRegister(x * y * z){
     // generate nodes
 
     // generate edges based on percolation probability
@@ -45,8 +45,4 @@ GraphRegister2::GraphRegister2(double probability, std::vector<size_type>) : Gra
 
 QubitVertex GraphRegister2::get_node(int x, int y, int z) {
     return QubitVertex();
-}
-
-GraphRegister2::GraphRegister2(double probability, int x, int y, int z) {
-
 }

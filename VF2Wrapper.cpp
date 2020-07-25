@@ -32,7 +32,7 @@ private:
     const Graph2& graph2_;
 };
 
-graph_type convert(GraphConstructor gr){
+graph_type convert(GraphRegister2 gr){
 
 
 	graph_type gr_converted(gr.vertices.size());
@@ -47,7 +47,7 @@ graph_type convert(GraphConstructor gr){
 	return gr_converted;
 }
 
-bool test_equal_raussendorf(GraphConstructor source){
+bool test_equal_raussendorf(GraphRegister2 source){
     // Build graph unit cell 1
     int num_verticesUC1 = 18;
     graph_type graphUC1(num_verticesUC1);
@@ -65,7 +65,7 @@ bool test_equal_raussendorf(GraphConstructor source){
 
 }
 
-bool test_equal(GraphConstructor source, GraphConstructor target){
+bool test_equal(GraphRegister2 source, GraphRegister2 target){
 
 	graph_type source_converted = convert(source);
 
