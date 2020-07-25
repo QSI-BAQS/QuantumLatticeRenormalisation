@@ -1,4 +1,8 @@
 
+class CandidateLookupElement {
+
+};
+
 class CandidateLookupTree {
 
 };

@@ -19,3 +19,5 @@ add_executable(QuantumLatticeRenormalisation main.cpp GraphRegister2.cpp GraphRe
 target_link_libraries(QuantumLatticeRenormalisation graphsim ${BOOST_LIBRARIES})
 
 add_executable(test_gen_distribution LatticeDistributionStatistics/test_gen_distribution.cpp)
+
+add_subdirectory(googletest)

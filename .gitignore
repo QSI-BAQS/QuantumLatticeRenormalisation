@@ -2,3 +2,6 @@
 /cmake-build-debug/
 /CMakeFiles/
 /.idea/
+Makefile
+cmake_install.cmake
+CMakeCache.cmake
