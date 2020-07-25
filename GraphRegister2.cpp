@@ -12,7 +12,7 @@ void GraphRegister2::add_node(QubitVertex node, hash_set<VertexIndex> neighbors)
     vertices.push_back(node);
     hash_set<VertexIndex>::iterator i = neighbors.begin();
     while(i != neighbors.end()) {
-        add_edge(node, neighbors.find());
+        // add_edge(node, neighbors.find());   // TODO error: no matching function for call to ‘__gnu_cxx::hash_set<long unsigned int>::find()’
     }
 }
 void GraphRegister2::add_node(QubitVertex node) {
@@ -28,25 +28,25 @@ GraphRegister2::GraphRegister2(const GraphRegister& g1, GraphRegister g2) : Grap
     }
 }
 
-GraphRegister2::GraphRegister2(double probability, std::vector<size_type>) : GraphRegister(x * y * z){
-    // generate nodes
-
-    // generate edges based on percolation probability
-        for(VertexIndex zi = 0; zi <z; ++z){
-            for(VertexIndex yi = 0; yi < y; ++y){
-                for(VertexIndex xi = 0; xi < x; ++x){
-                    // roll probability
-
-                    std::uniform_real_distribution<double> dist(0,1);
-
-                }
-
-                }}}
+//GraphRegister2::GraphRegister2(double probability, std::vector<size_type>) : GraphRegister(x * y * z){
+//    // generate nodes
+//
+//    // generate edges based on percolation probability
+//        for(VertexIndex zi = 0; zi <z; ++z){
+//            for(VertexIndex yi = 0; yi < y; ++y){
+//                for(VertexIndex xi = 0; xi < x; ++x){
+//                    // roll probability
+//
+//                    std::uniform_real_distribution<double> dist(0,1);
+//
+//                }
+//
+//                }}}
 
 QubitVertex GraphRegister2::get_node(int x, int y, int z) {
     return QubitVertex();
 }
 
-GraphRegister2::GraphRegister2(double probability, int x, int y, int z) {
+//GraphRegister2::GraphRegister2(double probability, int x, int y, int z) {
 
-}
+//}

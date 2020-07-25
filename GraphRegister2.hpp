@@ -3,7 +3,7 @@
 #define GRAPHSIMTEST_GRAPHCONSTRUCTOR_HPP
 
 
-#include <graphsim.h>
+#include "GraphSim/graphsim.h"
 
 
 class GraphRegister2 : GraphRegister{
