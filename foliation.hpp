@@ -1,6 +1,6 @@
 
-#ifndef GRAPHSIMTEST_FOLIATION_HPP
-#define GRAPHSIMTEST_FOLIATION_HPP
+#ifndef FOLIATION_HPP
+#define FOLIATION_HPP
 
 #include <graphsim.h>
 
@@ -13,4 +13,4 @@ class Foliation {
 };
 
 
-#endif //GRAPHSIMTEST_FOLIATION_HPP
+#endif //FOLIATION_HPP

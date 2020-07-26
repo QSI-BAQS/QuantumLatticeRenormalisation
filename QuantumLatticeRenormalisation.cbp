@@ -140,10 +140,10 @@
 		<Unit filename="/mnt/c/Users/Darcy/Documents/actual documents/uni/hons s1/QuantumLatticeRenormalisation/CandidateLookupTree.hpp">
 			<Option target="QuantumLatticeRenormalisation"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Darcy/Documents/actual documents/uni/hons s1/QuantumLatticeRenormalisation/GraphRegister2.cpp">
+		<Unit filename="/mnt/c/Users/Darcy/Documents/actual documents/uni/hons s1/QuantumLatticeRenormalisation/Graph.cpp">
 			<Option target="QuantumLatticeRenormalisation"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Darcy/Documents/actual documents/uni/hons s1/QuantumLatticeRenormalisation/GraphRegister2.hpp">
+		<Unit filename="/mnt/c/Users/Darcy/Documents/actual documents/uni/hons s1/QuantumLatticeRenormalisation/Graph.hpp">
 			<Option target="QuantumLatticeRenormalisation"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/Darcy/Documents/actual documents/uni/hons s1/QuantumLatticeRenormalisation/GraphSim/graphsim.cpp">

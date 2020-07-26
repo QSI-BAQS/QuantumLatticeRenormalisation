@@ -1,10 +1,10 @@
 #include <iostream>
 #include "GraphSim/graphsim.h"
-#include "GraphRegister2.hpp"
+#include "Graph.hpp"
 
 int main() {
 
-    GraphRegister2 g3(0.75, 5, 5, 5);
+    Graph g3(0.75, 5, 5, 5);
     GraphRegister g1(8);
     GraphRegister g2(8);
     g1.hadamard (4);
