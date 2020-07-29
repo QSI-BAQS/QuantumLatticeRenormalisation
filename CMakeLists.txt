@@ -15,7 +15,7 @@ link_directories(graphsim)
 find_package(Boost 1.57.0 COMPONENTS system filesystem REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
 
-add_executable(QuantumLatticeRenormalisation main.cpp Graph.cpp Graph.hpp foliation.cpp foliation.hpp similarity.cpp similarity.hpp VF2Wrapper.cpp VF2Wrapper.hpp CandidateLookupTree.cpp CandidateLookupTree.hpp basic_includes.hpp)
+add_executable(QuantumLatticeRenormalisation main.cpp Graph.cpp Graph.hpp foliation.cpp foliation.hpp similarity.cpp similarity.hpp VF2Wrapper.cpp VF2Wrapper.hpp CandidateLookupTree.cpp CandidateLookupTree.hpp basic_includes.hpp cartesian_graph.cpp cartesian_graph.hpp)
 target_link_libraries(QuantumLatticeRenormalisation graphsim ${BOOST_LIBRARIES})
 
 add_executable(test_gen_distribution LatticeDistributionStatistics/test_gen_distribution.cpp)

@@ -33,23 +33,21 @@ class Graph {
     // methods may throw an exception if the index doesn't exist.
     public:
 
+    // Create a graph register with no edges and the specified number of nodes.
+    Graph(vertex_index node_count);
+
     // Generate a graph register containing the nodes of two graphs
     // sharing no edges.
     Graph(Graph  g1, const Graph& g2);
-    // Generate a lattice given a percolation rate (probability) and dimensions.
-    // "mercedes" = false is random probability.
-    // "mercedes" = true follows KLM fusion probabilities.
-    Graph(double probability, int x, int y, int z, bool mercedes);
-
-    // Search for node at a logical position inside the GraphRegister based on coordinate
-    // don't consider offset.
-    Vertex get_node(int x, int y, int z);
-    // Search for a node with a matching index.
+.
     Vertex get_node(vertex_index index);
 
 
     // add the node, keeping its exisitng edges.
     void add_node(Vertex node);
+
+    // get the size of graph in terms of number of nodes.
+    vertex_index get_size();
 
     // remove the provided nodes from the graph, and put them in a new graphRegister.
 //    Graph split(vertex_list<VertexIndex> nodes_to_split);
@@ -96,9 +94,6 @@ private:
     vertex_index get_next_index();
     vertex_list vertices;
     vertex_index max_index;
-    vec offset;
-    vec size;
-
 };
 
-#endif //GRAPHCONSTRUCTOR_HPP
+#endif //GRAPH_HPP

@@ -27,6 +27,20 @@ Vertex Graph::get_node(int x, int y, int z) {
 Graph::Graph(double probability, int x, int y, int z, bool mercedes) {
     max_index = 0;
     // generate nodes
+    for(int zi = 0; zi <z; ++z){
+        for(int yi = 0; yi < y; ++y){
+            for(int xi = 0; xi < x; ++x){
+
+            }
+        }
+    }
+    // mercedes method: See
+    // Gimeno-Segovia, Mercedes, et al.
+    // "From three-photon Greenberger-Horne-Zeilinger states to ballistic universal quantum computation."
+    // Physical review letters 115.2 (2015): 020502.
+
+    // Method source code modified from https://github.com/herr-d/photonic_lattice
+
     if(mercedes){
 
     }
@@ -111,6 +125,14 @@ graph_list Graph::inverted_Z_measure(const vertex_list& neighbors_a, Vertex b) {
 
 vertex_index Graph::get_next_index() {
     return 0;
+}
+
+vertex_index Graph::get_size() {
+    return 0;
+}
+
+Graph::Graph(vertex_index node_count) {
+
 }
 
 CartesianVertex::CartesianVertex(vec vector) {
