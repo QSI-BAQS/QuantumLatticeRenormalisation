@@ -9,6 +9,7 @@
 class Vertex {
 public:
     vertex_list neighbors;
+    vertex_index index;
 };
 
 class CartesianVertex : Vertex{
@@ -44,11 +45,37 @@ class Graph {
     // remove the provided nodes from the graph, and put them in a new graphRegister.
 //    Graph split(hash_set<VertexIndex> nodes);
 
+
+    // these methods return a bool indicating success.
+    // they can fail if the index doesn't exist.
     void add_node(const Vertex &node);
+    // add a node, return its index.
 
-    void add_node_with_edges(const Vertex &node, const std::unordered_set<vertex_index> &neighbors);
+    vertex_index add_node();
+    bool del_node();
 
-    void Z_measure();
+
+
+    bool add_edge(vertex_index index1, vertex_index index2);
+    bool del_edge(vertex_index index1, vertex_index index2);
+    bool invert_edge(vertex_index index1, vertex_index index2);
+
+
+    bool add_node_with_edges(const Vertex &node, const std::unordered_set<vertex_index> &neighbors);
+
+    vertex_list get_neighborhood(vertex_index a);
+
+    void X_measure(vertex_index index, vertex_index special_neighbor);
+    void Y_measure(vertex_index index);
+    void Z_measure(vertex_index index);
+    void orbital(vertex_index index);
+
+    Graph[]  inverted_X_measure(vertex_list neighbors_a);
+    Graph[]  inverted_Y_measure(vertex_list neighbors_a);
+    Graph[]  inverted_Z_measure(vertex_list neighbors_a);
+    Graph[]  inverted_Z_measure(vertex_list neighbors_a, Vertex b);
+
+
 
 private:
 
@@ -56,6 +83,5 @@ private:
     vec size;
 
 };
-
 
 #endif //GRAPHCONSTRUCTOR_HPP

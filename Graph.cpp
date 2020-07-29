@@ -66,6 +66,10 @@ Graph::Graph(double probability, int x, int y, int z, bool mercedes) {
     }
 }
 
+vertex_index Graph::add_node() {
+    return 0;
+}
+
 CartesianVertex::CartesianVertex(vec vector) {
     this->vector = vector;
 }
