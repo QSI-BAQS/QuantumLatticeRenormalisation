@@ -8,15 +8,22 @@
 
 // defined in Graph
 class Vertex;
+class Graph;
+
+// vertex = node
 typedef Vertex Node;
 
+// data structure typedefs
 typedef std::list<Vertex> vertex_list;
 typedef std::unordered_set<Vertex> vertex_set;
 typedef u_int32_t vertex_index;
 
+typedef std::list<Graph> graph_list;
+
+// direction for cartesian logic
 enum direction { right = 0 , up = 1, back = 2, left = 3 , down = 4 , front = 5 };
 
-// vectors
+// vectors (follow inheritance so we can easily change 2d to 3d)
 struct vec {};
 struct vec2d : vec {
     int x;
@@ -27,5 +34,6 @@ struct vec3d : vec {
     int y;
     int z;
 };
+
 #endif //BASIC_INCLUDES_HPP
 
