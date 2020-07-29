@@ -6,9 +6,9 @@
 #include <list>
 #include <unordered_set>
 
-// defined in Graph
+// defined in CartesianGraph
 class Vertex;
-class Graph;
+class CartesianGraph;
 
 // vertex = node
 typedef Vertex Node;
@@ -18,7 +18,7 @@ typedef std::list<Vertex> vertex_list;
 typedef std::unordered_set<Vertex> vertex_set;
 typedef u_int32_t vertex_index;
 
-typedef std::list<Graph> graph_list;
+typedef std::list<CartesianGraph> graph_list;
 
 // direction for cartesian logic
 enum direction { right = 0 , up = 1, back = 2, left = 3 , down = 4 , front = 5 };

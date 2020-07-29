@@ -1,10 +1,10 @@
 #include <iostream>
 #include "GraphSim/graphsim.h"
-#include "Graph.hpp"
+#include "CartesianGraph.hpp"
 
 int main() {
 
-    Graph g3(0.75, 5, 5, 5);
+    CartesianGraph g3(0.75, 5, 5, 5);
     GraphRegister g1(8);
     GraphRegister g2(8);
     g1.hadamard (4);

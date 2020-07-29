@@ -19,7 +19,7 @@ public:
     vec vector;
 };
 
-class Graph {
+class CartesianGraph {
     // constraints + assumptions:
     // - whole-numbered 3d cartesian coordinate system
     // - generated graphs have 100% of nodes successfully generateded in lattice
@@ -29,16 +29,35 @@ class Graph {
     // - nodes have pair-records of the pointer to who they are connected to in the neighbor list.
     // if one side removes an edge, the other side gets updated as well.
 
-    // and not affected by offset or relative coordinates.
-    // methods may throw an exception if the index doesn't exist.
+    // A graph where each node must be cartesian.
+    // Nodes adeded must have coordinates specified.
+    // methods may return exceptions if coordinates are already occupied / empty.
+
     public:
 
+    // and not affected by offset or relative coordinates.
+    // methods may throw an exception if the index doesn't exist.
+    // Generate a lattice given a percolation rate (probability) and dimensions.
+    // "mercedes" = false is random probability.
+    // "mercedes" = true follows KLM fusion probabilities.
+
+    CartesianGraph(vertex_index nodeCount, double probability, int x, int y, int z, bool mercedes);
+    // add a node at the coordinates specified, with no edges. Replaces CartesianGraph method.
+    void add_node(vec coorinates);
+    // Search for node at a logical position inside the GraphRegister based on coordinate
+    // don't consider offset.
+    Vertex get_node(int x, int y, int z);
+    // Search for a node with a matching index
+
+    vec offset;
+    vec bounding_box;
+
     // Create a graph register with no edges and the specified number of nodes.
-    Graph(vertex_index node_count);
+    CartesianGraph(vertex_index node_count);
 
     // Generate a graph register containing the nodes of two graphs
     // sharing no edges.
-    Graph(Graph  g1, const Graph& g2);
+    CartesianGraph(CartesianGraph  g1, const CartesianGraph& g2);
 .
     Vertex get_node(vertex_index index);
 
@@ -50,7 +69,7 @@ class Graph {
     vertex_index get_size();
 
     // remove the provided nodes from the graph, and put them in a new graphRegister.
-//    Graph split(vertex_list<VertexIndex> nodes_to_split);
+//    CartesianGraph split(vertex_list<VertexIndex> nodes_to_split);
 
 
     // edge operations
