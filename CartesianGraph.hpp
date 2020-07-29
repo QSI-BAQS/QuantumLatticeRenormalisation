@@ -6,14 +6,10 @@
 #include "basic_includes.hpp"
 
 
-class Vertex {
+class CartesianVertex {
 public:
     vertex_list neighbors;
     vertex_index index;
-};
-
-class CartesianVertex : Vertex{
-public:
     explicit CartesianVertex(vec vector);
     vertex_index get_index();
     vec vector;
@@ -41,7 +37,7 @@ class CartesianGraph {
     // "mercedes" = false is random probability.
     // "mercedes" = true follows KLM fusion probabilities.
 
-    CartesianGraph(vertex_index nodeCount, double probability, int x, int y, int z, bool mercedes);
+    CartesianGraph(vertex_index nodeCount, double probability, vec3d size, bool mercedes);
     // add a node at the coordinates specified, with no edges. Replaces CartesianGraph method.
     void add_node(vec coorinates);
     // Search for node at a logical position inside the GraphRegister based on coordinate

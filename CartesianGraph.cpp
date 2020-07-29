@@ -33,8 +33,12 @@ Vertex CartesianGraph::get_node(int x, int y, int z) {
 Vertex CartesianGraph::get_node(int x, int y, int z) {
     return Vertex();
 }
-CartesianGraph::CartesianGraph(double probability, int x, int y, int z, bool mercedes) {
+ {
+
+}
+CartesianGraph::CartesianGraph(vertex_index nodeCount, double probability, vec3d size, bool mercedes) {
     max_index = 0;
+    vertex_index x=size.x, y=size.y, z=size.z;
     // generate nodes
     for(int zi = 0; zi <z; ++z){
         for(int yi = 0; yi < y; ++y){
@@ -143,6 +147,8 @@ vertex_index CartesianGraph::get_size() {
 CartesianGraph::CartesianGraph(vertex_index node_count) {
 
 }
+
+
 
 CartesianVertex::CartesianVertex(vec vector) {
     this->vector = vector;

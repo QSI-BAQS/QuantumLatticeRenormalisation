@@ -2,10 +2,11 @@
 #ifndef FOLIATION_HPP
 #define FOLIATION_HPP
 
+#include "basic_includes.hpp"
 #include <graphsim.h>
 
 struct layer{
-    hash_set<QubitVertex> qubits;
+    vertex_list nodes_on_layer;
 
 };
 class Foliation {

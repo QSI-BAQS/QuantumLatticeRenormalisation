@@ -7,15 +7,15 @@
 #include <unordered_set>
 
 // defined in CartesianGraph
-class Vertex;
+class CartesianVertex;
 class CartesianGraph;
 
 // vertex = node
-typedef Vertex Node;
+typedef CartesianVertex Node;
 
 // data structure typedefs
-typedef std::list<Vertex> vertex_list;
-typedef std::unordered_set<Vertex> vertex_set;
+typedef std::list<CartesianVertex> vertex_list;
+typedef std::unordered_set<CartesianVertex> vertex_set;
 typedef u_int32_t vertex_index;
 
 typedef std::list<CartesianGraph> graph_list;
