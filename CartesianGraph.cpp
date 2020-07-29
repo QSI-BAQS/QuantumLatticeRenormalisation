@@ -24,13 +24,11 @@ CartesianGraph::CartesianGraph(CartesianGraph g1, const CartesianGraph& g2) : Ca
 void CartesianGraph::add_node(vec coorinates) {
 
 }
-
-Vertex CartesianGraph::get_node(int x, int y, int z) {
+ CartesianVertexCartesianGraph::get_node(int x, int y, int z) {
     return Vertex();
 }
 
-
-Vertex CartesianGraph::get_node(int x, int y, int z) {
+ CartesianVertexCartesianGraph::get_node(int x, int y, int z) {
     return Vertex();
 }
  {
@@ -91,13 +89,8 @@ void CartesianGraph::Z_measure(vertex_index index) {
 void CartesianGraph::orbital(vertex_index index) {
 
 }
-
-Vertex CartesianGraph::get_node(vertex_index index) {
+CartesianVertex CartesianGraph::get_node(vertex_index index) {
     return Vertex();
-}
-
-void CartesianGraph::add_node(Vertex node) {
-
 }
 
 void CartesianGraph::del_node(vertex_index index) {
@@ -132,7 +125,7 @@ graph_list CartesianGraph::inverted_Z_measure(const vertex_list& neighbors_a) {
     return graph_list();
 }
 
-graph_list CartesianGraph::inverted_Z_measure(const vertex_list& neighbors_a, Vertex b) {
+graph_list CartesianGraph::inverted_Z_measure(const vertex_list& neighbors_a, CartesianVertex b) {
     return graph_list();
 }
 
@@ -144,10 +137,9 @@ vertex_index CartesianGraph::get_size() {
     return 0;
 }
 
-CartesianGraph::CartesianGraph(vertex_index node_count) {
+void CartesianGraph::add_node(CartesianVertex node) {
 
 }
-
 
 
 CartesianVertex::CartesianVertex(vec vector) {
