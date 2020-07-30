@@ -4,6 +4,24 @@
 
 #include <list>
 #include "../basic_includes.hpp"
+#include <boost/graph/adjacency_list.hpp>
+using namespace boost;
+struct vertex_x {
+    typedef boost::vertex_property_tag kind;
+};
+
+struct vertex_y {
+    typedef boost::vertex_property_tag kind;
+};
+
+struct vertex_z {
+    typedef boost::vertex_property_tag kind;
+};
+typedef adjacency_list<vecS, vecS, undirectedS,
+    vertex_x,
+    vertex_y,
+    vertex_z> MyGraphType;
+
 
 class CartesianGraph {
     // constraints + assumptions:
@@ -25,10 +43,10 @@ class CartesianGraph {
     // "mercedes" = false is random probability.
     // "mercedes" = true follows KLM fusion probabilities.
 
-    CartesianGraph(vertex_index nodeCount, double probability, vec3d size, bool mercedes);
+    CartesianGraph(vertex_ind nodeCount, double probability, vec3d size, bool mercedes);
 
     // Create a graph register with no edges and the specified number of nodes.
-    // CartesianGraph(vertex_index node_count);
+    // CartesianGraph(vertex_ind node_count);
 
     // Generate a graph register containing the nodes of two graphs
     // sharing no edges.
@@ -41,13 +59,13 @@ class CartesianGraph {
     // don't consider offset.
     CartesianVertex get_node(vec3d coord);
     // Search for a node with a matching index
-    CartesianVertex get_node(vertex_index index);
+    CartesianVertex get_node(vertex_ind index);
 
     // add the node, keeping its exisitng edges.
     void add_node (CartesianVertex node);
 
     // get the size of graph in terms of number of nodes.
-    vertex_index get_size();
+    vertex_ind get_size();
 
     // remove the provided nodes from the graph, and put them in a new graphRegister.
 //    CartesianGraph split(vertex_set<VertexIndex> nodes_to_split);
@@ -56,24 +74,24 @@ class CartesianGraph {
     // edge operations
     // add_edge and del_edge will throw an exception if they would have no effect
     // in addition to if the index is not found in the graph.
-    void add_edge(vertex_index a, vertex_index b);
-    void del_edge(vertex_index a, vertex_index b);
-    void invert_edge(vertex_index a, vertex_index b);
+    void add_edge(vertex_ind a, vertex_ind b);
+    void del_edge(vertex_ind a, vertex_ind b);
+    void invert_edge(vertex_ind a, vertex_ind b);
 
 
 
     // delete a node, and all of its edges(equivalent to Z_measure)
-    void del_node(vertex_index index);
+    void del_node(vertex_ind index);
 
-    bool add_node_with_edges(const CartesianVertex&node, const std::unordered_set<vertex_index> &neighbors);
+    bool add_node_with_edges(const CartesianVertex&node, const vertex_set &neighbors);
 
-    vertex_set get_neighborhood(vertex_index a);
+    vertex_set get_neighborhood(vertex_ind a);
 
     // local pauli measurement operators (LPMOs)
-    void X_measure(vertex_index index, vertex_index special_neighbor);
-    void Y_measure(vertex_index index);
-    void Z_measure(vertex_index index);
-    void orbital(vertex_index index);
+    void X_measure(vertex_ind index, vertex_ind special_neighbor);
+    void Y_measure(vertex_ind index);
+    void Z_measure(vertex_ind index);
+    void orbital(vertex_ind index);
 
     // inverted LPMOs
     // each returns a list of all possible inverted LPMOs ...
@@ -81,16 +99,10 @@ class CartesianGraph {
     graph_list  inverted_X_measure(const vertex_set& neighbors_a);
     graph_list  inverted_Y_measure(const vertex_set& neighbors_a);
     graph_list  inverted_Z_measure(const vertex_set& neighbors_a);
-    graph_list  inverted_Z_measure(const vertex_set& neighbors_a, CartesianVertex b);
 
 
 
 private:
-
-    // get the next index to use for node assignment, and increment the private counter.
-    vertex_set vertices;
-    vertex_index cur_max_index;
-    vertex_index get_next_index();
     vec offset;
     vec bounding_box;
 };

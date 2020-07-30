@@ -5,7 +5,7 @@
 #include "basic_includes.hpp"
 
 struct layer{
-    vertex_set nodes_on_layer;
+
 
 };
 class Foliation {

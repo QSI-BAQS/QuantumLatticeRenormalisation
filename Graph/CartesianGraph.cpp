@@ -3,11 +3,11 @@
 #include <boost/range/size_type.hpp>
 #include <utility>
 #include "CartesianGraph.hpp"
-
+#include "CartesianVertex.hpp"
 
 extern std::mt19937_64 rng;
 
-void CartesianGraph::add_node_with_edges(const Vertex& node, const vertex_set& neighbors){
+void CartesianGraph::add_node_with_edges(const CartesianVertex& node, const vertex_set& neighbors){
     vertex_set::iterator i = neighbors.begin();
     while(i != neighbors.end()) {
         add_edge(node, neighbors.find(int(i)));
@@ -27,12 +27,12 @@ void CartesianGraph::add_node(vec3d coorinates) {
  CartesianVertex CartesianGraph::get_node(vec3d coord) {
     return NULL;
 }
-CartesianVertex CartesianGraph::get_node(vertex_index index) {
+CartesianVertex CartesianGraph::get_node(vertex_ind index) {
     return Vertex();
 }
 
-CartesianGraph::CartesianGraph(vertex_index nodeCount, double probability, vec3d size, bool mercedes) {
-    vertex_index x=size.x, y=size.y, z=size.z;
+CartesianGraph::CartesianGraph(vertex_ind nodeCount, double probability, vec3d size, bool mercedes) {
+    vertex_ind x=size.x, y=size.y, z=size.z;
     // generate nodes
     for(int zi = 0; zi <z; ++z){
         for(int yi = 0; yi < y; ++y){
@@ -66,44 +66,34 @@ CartesianGraph::CartesianGraph(vertex_index nodeCount, double probability, vec3d
     }
 }
 
-void CartesianGraph::add_edge(vertex_index a, vertex_index b) {
+void CartesianGraph::add_edge(vertex_ind a, vertex_ind b) {
     CartesianVertex a_node = get_node(a), b_node = get_node(b);
     a_node.neighbors.push_back()
 
 }
 
-void CartesianGraph::del_edge(vertex_index a, vertex_index b) {
+void CartesianGraph::del_edge(vertex_ind a, vertex_ind b) {
 
 }
 
-void CartesianGraph::orbital(vertex_index index) {
+void CartesianGraph::orbital(vertex_ind index) {
 
 }
-void CartesianGraph::del_node(vertex_index index) {
-
-}
-
-void CartesianGraph::invert_edge(vertex_index a, vertex_index b) {
+void CartesianGraph::del_node(vertex_ind index) {
 
 }
 
-vertex_set CartesianGraph::get_neighborhood(vertex_index a) {
+void CartesianGraph::invert_edge(vertex_ind a, vertex_ind b) {
+
+}
+
+vertex_set CartesianGraph::get_neighborhood(vertex_ind a) {
     return vertex_set();
 }
 
-vertex_index CartesianGraph::get_next_index() {
-    vertex_index cur_max = cur_max_index;
-    cur_max_index++;
-    return cur_max;
-}
 
-vertex_index CartesianGraph::get_size() {
-    return vertices.size();
-}
-
-void CartesianGraph::add_node(CartesianVertex node) {
-    node.index = get_next_index();
-    vertices.push_back(node);
+vertex_ind CartesianGraph::get_size() {
+    return 0;
 }
 
 
@@ -112,6 +102,6 @@ CartesianVertex::CartesianVertex(vec3d vector) {
     this->index = 0;
 }
 
-vertex_index CartesianVertex::get_edge_count() {
-    return neighbors
+vertex_ind CartesianVertex::get_edge_count() {
+    return 0;
 }
