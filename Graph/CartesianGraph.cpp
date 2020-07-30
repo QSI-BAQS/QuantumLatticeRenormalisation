@@ -7,8 +7,8 @@
 
 extern std::mt19937_64 rng;
 
-void CartesianGraph::add_node_with_edges(const Vertex& node, const vertex_list& neighbors){
-    vertex_list::iterator i = neighbors.begin();
+void CartesianGraph::add_node_with_edges(const Vertex& node, const vertex_set& neighbors){
+    vertex_set::iterator i = neighbors.begin();
     while(i != neighbors.end()) {
         add_edge(node, neighbors.find(int(i)));
     }
@@ -21,7 +21,7 @@ CartesianGraph::CartesianGraph(CartesianGraph g1, const CartesianGraph& g2) : Ca
 }
 
 
-void CartesianGraph::add_node(vec coorinates) {
+void CartesianGraph::add_node(vec3d coorinates) {
 
 }
  CartesianVertex CartesianGraph::get_node(vec3d coord) {
@@ -32,7 +32,6 @@ CartesianVertex CartesianGraph::get_node(vertex_index index) {
 }
 
 CartesianGraph::CartesianGraph(vertex_index nodeCount, double probability, vec3d size, bool mercedes) {
-    max_index = 0;
     vertex_index x=size.x, y=size.y, z=size.z;
     // generate nodes
     for(int zi = 0; zi <z; ++z){
@@ -67,10 +66,6 @@ CartesianGraph::CartesianGraph(vertex_index nodeCount, double probability, vec3d
     }
 }
 
-bool CartesianGraph::compare_index(const CartesianVertex& a, const CartesianVertex& b) {
-    return a.index == b.index;
-}
-
 void CartesianGraph::add_edge(vertex_index a, vertex_index b) {
     CartesianVertex a_node = get_node(a), b_node = get_node(b);
     a_node.neighbors.push_back()
@@ -92,8 +87,8 @@ void CartesianGraph::invert_edge(vertex_index a, vertex_index b) {
 
 }
 
-vertex_list CartesianGraph::get_neighborhood(vertex_index a) {
-    return vertex_list();
+vertex_set CartesianGraph::get_neighborhood(vertex_index a) {
+    return vertex_set();
 }
 
 vertex_index CartesianGraph::get_next_index() {
@@ -112,11 +107,11 @@ void CartesianGraph::add_node(CartesianVertex node) {
 }
 
 
-CartesianVertex::CartesianVertex(vec vector) {
+CartesianVertex::CartesianVertex(vec3d vector) {
     this->vector = vector;
     this->index = 0;
 }
 
 vertex_index CartesianVertex::get_edge_count() {
-    return 0;
+    return neighbors
 }

@@ -5,16 +5,6 @@
 #include <list>
 #include "../basic_includes.hpp"
 
-
-class CartesianVertex {
-public:
-    vertex_list neighbors;
-    explicit CartesianVertex(vec vector);
-    vec vector;
-    vertex_index index;
-    vertex_index get_edge_count();
-};
-
 class CartesianGraph {
     // constraints + assumptions:
     // - whole-numbered 3d cartesian coordinate system
@@ -46,15 +36,12 @@ class CartesianGraph {
 
 
     // add a node at the coordinates specified, with no edges.
-    void add_node(vec coorinates);
+    void add_node(vec3d coorinates);
     // Search for node at a logical position inside the GraphRegister based on coordinate
     // don't consider offset.
     CartesianVertex get_node(vec3d coord);
     // Search for a node with a matching index
     CartesianVertex get_node(vertex_index index);
-
-    // comparator for CartesianVertex.
-    bool compare_index(const CartesianVertex& a, const CartesianVertex& b);
 
     // add the node, keeping its exisitng edges.
     void add_node (CartesianVertex node);
@@ -63,7 +50,7 @@ class CartesianGraph {
     vertex_index get_size();
 
     // remove the provided nodes from the graph, and put them in a new graphRegister.
-//    CartesianGraph split(vertex_list<VertexIndex> nodes_to_split);
+//    CartesianGraph split(vertex_set<VertexIndex> nodes_to_split);
 
 
     // edge operations
@@ -80,7 +67,7 @@ class CartesianGraph {
 
     bool add_node_with_edges(const CartesianVertex&node, const std::unordered_set<vertex_index> &neighbors);
 
-    vertex_list get_neighborhood(vertex_index a);
+    vertex_set get_neighborhood(vertex_index a);
 
     // local pauli measurement operators (LPMOs)
     void X_measure(vertex_index index, vertex_index special_neighbor);
@@ -91,17 +78,17 @@ class CartesianGraph {
     // inverted LPMOs
     // each returns a list of all possible inverted LPMOs ...
     // TODO more detail on inversion process
-    graph_list  inverted_X_measure(const vertex_list& neighbors_a);
-    graph_list  inverted_Y_measure(const vertex_list& neighbors_a);
-    graph_list  inverted_Z_measure(const vertex_list& neighbors_a);
-    graph_list  inverted_Z_measure(const vertex_list& neighbors_a, CartesianVertex b);
+    graph_list  inverted_X_measure(const vertex_set& neighbors_a);
+    graph_list  inverted_Y_measure(const vertex_set& neighbors_a);
+    graph_list  inverted_Z_measure(const vertex_set& neighbors_a);
+    graph_list  inverted_Z_measure(const vertex_set& neighbors_a, CartesianVertex b);
 
 
 
 private:
 
     // get the next index to use for node assignment, and increment the private counter.
-    vertex_list vertices;
+    vertex_set vertices;
     vertex_index cur_max_index;
     vertex_index get_next_index();
     vec offset;

@@ -3,10 +3,9 @@
 #define FOLIATION_HPP
 
 #include "basic_includes.hpp"
-#include <graphsim.h>
 
 struct layer{
-    vertex_list nodes_on_layer;
+    vertex_set nodes_on_layer;
 
 };
 class Foliation {
