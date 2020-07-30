@@ -24,16 +24,13 @@ CartesianGraph::CartesianGraph(CartesianGraph g1, const CartesianGraph& g2) : Ca
 void CartesianGraph::add_node(vec coorinates) {
 
 }
- CartesianVertexCartesianGraph::get_node(int x, int y, int z) {
+ CartesianVertex CartesianGraph::get_node(vec3d coord) {
+    return NULL;
+}
+CartesianVertex CartesianGraph::get_node(vertex_index index) {
     return Vertex();
 }
 
- CartesianVertexCartesianGraph::get_node(int x, int y, int z) {
-    return Vertex();
-}
- {
-
-}
 CartesianGraph::CartesianGraph(vertex_index nodeCount, double probability, vec3d size, bool mercedes) {
     max_index = 0;
     vertex_index x=size.x, y=size.y, z=size.z;
@@ -70,38 +67,24 @@ CartesianGraph::CartesianGraph(vertex_index nodeCount, double probability, vec3d
     }
 }
 
-vertex_index CartesianGraph::add_node() {
-    return 0;
+bool CartesianGraph::compare_index(const CartesianVertex& a, const CartesianVertex& b) {
+    return a.index == b.index;
 }
 
-void CartesianGraph::X_measure(vertex_index index, vertex_index special_neighbor) {
+void CartesianGraph::add_edge(vertex_index a, vertex_index b) {
+    CartesianVertex a_node = get_node(a), b_node = get_node(b);
+    a_node.neighbors.push_back()
 
 }
 
-void CartesianGraph::Y_measure(vertex_index index) {
-
-}
-
-void CartesianGraph::Z_measure(vertex_index index) {
+void CartesianGraph::del_edge(vertex_index a, vertex_index b) {
 
 }
 
 void CartesianGraph::orbital(vertex_index index) {
 
 }
-CartesianVertex CartesianGraph::get_node(vertex_index index) {
-    return Vertex();
-}
-
 void CartesianGraph::del_node(vertex_index index) {
-
-}
-
-void CartesianGraph::add_edge(vertex_index a, vertex_index b) {
-
-}
-
-void CartesianGraph::del_edge(vertex_index a, vertex_index b) {
 
 }
 
@@ -113,39 +96,27 @@ vertex_list CartesianGraph::get_neighborhood(vertex_index a) {
     return vertex_list();
 }
 
-graph_list CartesianGraph::inverted_X_measure(const vertex_list& neighbors_a) {
-    return graph_list();
-}
-
-graph_list CartesianGraph::inverted_Y_measure(const vertex_list& neighbors_a) {
-    return graph_list();
-}
-
-graph_list CartesianGraph::inverted_Z_measure(const vertex_list& neighbors_a) {
-    return graph_list();
-}
-
-graph_list CartesianGraph::inverted_Z_measure(const vertex_list& neighbors_a, CartesianVertex b) {
-    return graph_list();
-}
-
 vertex_index CartesianGraph::get_next_index() {
-    return 0;
+    vertex_index cur_max = cur_max_index;
+    cur_max_index++;
+    return cur_max;
 }
 
 vertex_index CartesianGraph::get_size() {
-    return 0;
+    return vertices.size();
 }
 
 void CartesianGraph::add_node(CartesianVertex node) {
-
+    node.index = get_next_index();
+    vertices.push_back(node);
 }
 
 
 CartesianVertex::CartesianVertex(vec vector) {
     this->vector = vector;
+    this->index = 0;
 }
 
-vertex_index CartesianVertex::get_index() {
+vertex_index CartesianVertex::get_edge_count() {
     return 0;
 }

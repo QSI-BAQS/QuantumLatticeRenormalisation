@@ -1,6 +1,6 @@
 
 #include "VF2Wrapper.hpp"
-#include "CartesianGraph.hpp"
+#include "Graph/CartesianGraph.hpp"
 #include <boost/graph/adjacency_list.hpp>
 #include <boost/graph/vf2_sub_graph_iso.hpp>
 using namespace boost;

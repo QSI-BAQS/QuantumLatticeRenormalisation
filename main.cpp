@@ -1,6 +1,6 @@
 #include <iostream>
 #include "GraphSim/graphsim.h"
-#include "CartesianGraph.hpp"
+#include "Graph/CartesianGraph.hpp"
 
 int main() {
 

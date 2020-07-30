@@ -3,16 +3,16 @@
 #define GRAPH_HPP
 
 #include <list>
-#include "basic_includes.hpp"
+#include "../basic_includes.hpp"
 
 
 class CartesianVertex {
 public:
     vertex_list neighbors;
-    vertex_index index;
     explicit CartesianVertex(vec vector);
-    vertex_index get_index();
     vec vector;
+    vertex_index index;
+    vertex_index get_edge_count();
 };
 
 class CartesianGraph {
@@ -36,15 +36,6 @@ class CartesianGraph {
     // "mercedes" = true follows KLM fusion probabilities.
 
     CartesianGraph(vertex_index nodeCount, double probability, vec3d size, bool mercedes);
-    // add a node at the coordinates specified, with no edges.
-    void add_node(vec coorinates);
-    // Search for node at a logical position inside the GraphRegister based on coordinate
-    // don't consider offset.
-    CartesianVertex get_node(vec3d coord);
-    // Search for a node with a matching index
-
-    vec offset;
-    vec bounding_box;
 
     // Create a graph register with no edges and the specified number of nodes.
     // CartesianGraph(vertex_index node_count);
@@ -52,9 +43,18 @@ class CartesianGraph {
     // Generate a graph register containing the nodes of two graphs
     // sharing no edges.
     CartesianGraph(CartesianGraph  g1, const CartesianGraph& g2);
-.
-    CartesianVertexget_node(vertex_index index);
 
+
+    // add a node at the coordinates specified, with no edges.
+    void add_node(vec coorinates);
+    // Search for node at a logical position inside the GraphRegister based on coordinate
+    // don't consider offset.
+    CartesianVertex get_node(vec3d coord);
+    // Search for a node with a matching index
+    CartesianVertex get_node(vertex_index index);
+
+    // comparator for CartesianVertex.
+    bool compare_index(const CartesianVertex& a, const CartesianVertex& b);
 
     // add the node, keeping its exisitng edges.
     void add_node (CartesianVertex node);
@@ -101,9 +101,11 @@ class CartesianGraph {
 private:
 
     // get the next index to use for node assignment, and increment the private counter.
-    vertex_index get_next_index();
     vertex_list vertices;
-    vertex_index max_index;
+    vertex_index cur_max_index;
+    vertex_index get_next_index();
+    vec offset;
+    vec bounding_box;
 };
 
 #endif //GRAPH_HPP
