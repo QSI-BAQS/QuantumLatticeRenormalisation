@@ -29,7 +29,9 @@ int main() {
     // g1.print_stabilizer();
 
 
-
+    graph_type BGLGraph(5);
+    add_edge(0, 1, BGLGraph);
+    BGLGraph[0].x = 4;
 
     return 0;
 }

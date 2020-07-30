@@ -6,30 +6,28 @@
 #include "CartesianVertex.hpp"
 
 extern std::mt19937_64 rng;
-
-void CartesianGraph::add_node_with_edges(const CartesianVertex& node, const vertex_set& neighbors){
-    vertex_set::iterator i = neighbors.begin();
-    while(i != neighbors.end()) {
-        add_edge(node, neighbors.find(int(i)));
-    }
-}
+//
+// void CartesianGraph::add_node_with_edges(const CartesianVertex& node, const vertex_set& neighbors){
+//     vertex_set::iterator i = neighbors.begin();
+//     while(i != neighbors.end()) {
+//         add_edge(node, neighbors.find(int(i)));
+//     }
+// }
 
 CartesianGraph::CartesianGraph(CartesianGraph g1, const CartesianGraph& g2) : CartesianGraph(std::move(g1)) {
-    for(auto & vertex : g2.vertices){
-        add_node_with_edges(vertex, vertex.neighbors);
-    }
+
 }
 
 
 void CartesianGraph::add_node(vec3d coorinates) {
 
 }
- CartesianVertex CartesianGraph::get_node(vec3d coord) {
-    return NULL;
-}
-CartesianVertex CartesianGraph::get_node(vertex_ind index) {
-    return Vertex();
-}
+// CartesianVertex CartesianGraph::get_node(vec3d coord) {
+//     return 0;
+// }
+// CartesianVertex CartesianGraph::get_node(vertex_ind index) {
+//     return NULL;
+// }
 
 CartesianGraph::CartesianGraph(vertex_ind nodeCount, double probability, vec3d size, bool mercedes) {
     vertex_ind x=size.x, y=size.y, z=size.z;
@@ -67,8 +65,6 @@ CartesianGraph::CartesianGraph(vertex_ind nodeCount, double probability, vec3d s
 }
 
 void CartesianGraph::add_edge(vertex_ind a, vertex_ind b) {
-    CartesianVertex a_node = get_node(a), b_node = get_node(b);
-    a_node.neighbors.push_back()
 
 }
 
@@ -87,9 +83,9 @@ void CartesianGraph::invert_edge(vertex_ind a, vertex_ind b) {
 
 }
 
-vertex_set CartesianGraph::get_neighborhood(vertex_ind a) {
-    return vertex_set();
-}
+// vertex_set CartesianGraph::get_neighborhood(vertex_ind a) {
+//     return vertex_set();
+// }
 
 
 vertex_ind CartesianGraph::get_size() {
@@ -99,7 +95,6 @@ vertex_ind CartesianGraph::get_size() {
 
 CartesianVertex::CartesianVertex(vec3d vector) {
     this->vector = vector;
-    this->index = 0;
 }
 
 vertex_ind CartesianVertex::get_edge_count() {

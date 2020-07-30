@@ -6,21 +6,8 @@
 #include "../basic_includes.hpp"
 #include <boost/graph/adjacency_list.hpp>
 using namespace boost;
-struct vertex_x {
-    typedef boost::vertex_property_tag kind;
-};
+typedef adjacency_list<vecS, vecS, undirectedS, vec3d> graph_type;
 
-struct vertex_y {
-    typedef boost::vertex_property_tag kind;
-};
-
-struct vertex_z {
-    typedef boost::vertex_property_tag kind;
-};
-typedef adjacency_list<vecS, vecS, undirectedS,
-    vertex_x,
-    vertex_y,
-    vertex_z> MyGraphType;
 
 
 class CartesianGraph {
@@ -57,12 +44,12 @@ class CartesianGraph {
     void add_node(vec3d coorinates);
     // Search for node at a logical position inside the GraphRegister based on coordinate
     // don't consider offset.
-    CartesianVertex get_node(vec3d coord);
+    // CartesianVertex get_node(vec3d coord);
     // Search for a node with a matching index
-    CartesianVertex get_node(vertex_ind index);
+    // CartesianVertex get_node(vertex_ind index);
 
     // add the node, keeping its exisitng edges.
-    void add_node (CartesianVertex node);
+    // void add_node (CartesianVertex node);
 
     // get the size of graph in terms of number of nodes.
     vertex_ind get_size();
@@ -83,9 +70,9 @@ class CartesianGraph {
     // delete a node, and all of its edges(equivalent to Z_measure)
     void del_node(vertex_ind index);
 
-    bool add_node_with_edges(const CartesianVertex&node, const vertex_set &neighbors);
+    // bool add_node_with_edges(const CartesianVertex&node, const vertex_set &neighbors);
 
-    vertex_set get_neighborhood(vertex_ind a);
+    // vertex_set get_neighborhood(vertex_ind a);
 
     // local pauli measurement operators (LPMOs)
     void X_measure(vertex_ind index, vertex_ind special_neighbor);
