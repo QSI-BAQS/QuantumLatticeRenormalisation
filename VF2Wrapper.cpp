@@ -1,6 +1,6 @@
 
 #include "VF2Wrapper.hpp"
-#include "GraphRegister2.hpp"
+#include "CartesianGraph.hpp"
 #include <boost/graph/adjacency_list.hpp>
 #include <boost/graph/vf2_sub_graph_iso.hpp>
 using namespace boost;
@@ -32,7 +32,7 @@ private:
     const Graph2& graph2_;
 };
 
-graph_type convert(GraphRegister2 gr){
+graph_type convert(CartesianGraph gr){
 
 
 	graph_type gr_converted(gr.vertices.size());
@@ -47,7 +47,7 @@ graph_type convert(GraphRegister2 gr){
 	return gr_converted;
 }
 
-bool test_equal_raussendorf(GraphRegister2 source){
+bool test_equal_raussendorf(CartesianGraph source){
     // Build graph unit cell 1
     int num_verticesUC1 = 18;
     graph_type graphUC1(num_verticesUC1);
@@ -65,7 +65,7 @@ bool test_equal_raussendorf(GraphRegister2 source){
 
 }
 
-bool test_equal(GraphRegister2 source, GraphRegister2 target){
+bool test_equal(CartesianGraph source, CartesianGraph target){
 
 	graph_type source_converted = convert(source);
 

@@ -1,6 +1,6 @@
 
-#ifndef GRAPHSIMTEST_SIMILARITY_HPP
-#define GRAPHSIMTEST_SIMILARITY_HPP
+#ifndef SIMILARITY_HPP
+#define SIMILARITY_HPP
 
 
 #include "GraphSim/graphsim.h"
@@ -12,4 +12,4 @@ public:
 };
 
 
-#endif //GRAPHSIMTEST_SIMILARITY_HPP
+#endif //SIMILARITY_HPP
