@@ -29,34 +29,68 @@ void CartesianGraph::add_node(vec3d coorinates) {
 //     return NULL;
 // }
 
-CartesianGraph::CartesianGraph(vertex_ind nodeCount, double probability, vec3d size, bool mercedes) {
-    vertex_ind x=size.x, y=size.y, z=size.z;
-    // generate nodes
-    for(int zi = 0; zi <z; ++z){
-        for(int yi = 0; yi < y; ++y){
-            for(int xi = 0; xi < x; ++x){
+CartesianGraph::CartesianGraph(vec3d bounding_size, bool mercedes, double seed, vec3d offset, double prob_success) {
+    // indices from size struct
+    vertex_ind x=bounding_size.x, y=bounding_size.y, z=bounding_size.z;
+    bounding_box = bounding_size;
+    this->offset = {0,0,0};
+    // generate nodes and initial graph object
+    graph_type graph(x * y *z);
 
+    // assign carteisan coordinates to nodes
+    for(int zi = 0; zi < z; zi++){
+        for(int yi = 0; yi < y; yi++){
+            for(int xi = 0; xi < x; xi++){
+                vertex_ind cur_index =
+                        zi * x * y +
+                        yi * x +
+                        xi;
+                graph[cur_index].x = xi;
+                graph[cur_index].y = yi;
+                graph[cur_index].z = zi;
             }
         }
     }
-    // mercedes method: See
-    // Gimeno-Segovia, Mercedes, et al.
-    // "From three-photon Greenberger-Horne-Zeilinger states to ballistic universal quantum computation."
-    // Physical review letters 115.2 (2015): 020502.
-
-    // Method source code modified from https://github.com/herr-d/photonic_lattice
+    // random setup
+    std::random_device rd;
+    if(seed == 0){
+        seed = rd();
+    }
+    // mersenne_twister_engine seeded with rd() same generator as photonic_lattice
+    std::mt19937 gen(seed);
+    std::uniform_real_distribution<> dist(1.0, 2.0);
 
     if(mercedes){
+        // mercedes method: See
+        // Gimeno-Segovia, Mercedes, et al.
+        // "From three-photon Greenberger-Horne-Zeilinger states to ballistic universal quantum computation."
+        // Physical review letters 115.2 (2015): 020502.
+
+        // Method source code modified from https://github.com/herr-d/photonic_lattice
+
 
     }
     else{
-        // generate edges based on percolation probability
+        // simple probability method.
+        // each edge has a chance of failing proportional to "probability".
         for(int zi = 0; zi <z; ++z){
             for(int yi = 0; yi < y; ++y){
                 for(int xi = 0; xi < x; ++x){
-                    // roll probability
-
-                    std::uniform_real_distribution<double> dist(0,1);
+                    if(zi > 0){
+                        if(dist(gen) > prob_success + 1)
+                            add_edge(get_index({xi, yi, zi}),
+                                    get_index({xi, yi, zi - 1}));
+                    }
+                    if(yi > 0){
+                        if(dist(gen) > prob_success + 1)
+                            add_edge(get_index({xi, yi, zi}),
+                                    get_index({xi, yi - 1, zi}));
+                    }
+                    if(xi > 0){
+                        if(dist(gen) > prob_success + 1)
+                            add_edge(get_index({xi, yi, zi}),
+                                    get_index({xi - 1, yi, zi}));
+                    }
 
                 }
             }
@@ -90,6 +124,13 @@ void CartesianGraph::invert_edge(vertex_ind a, vertex_ind b) {
 
 vertex_ind CartesianGraph::get_size() {
     return 0;
+}
+
+vertex_ind CartesianGraph::get_index(vec3d vector) {
+    vertex_ind x = bounding_box.x, y = bounding_box.y, z = bounding_box.z;
+    return vector.z * x * y +
+        vector.y * x +
+        vector.x;
 }
 
 

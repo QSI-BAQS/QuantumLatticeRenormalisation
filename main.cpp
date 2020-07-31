@@ -33,5 +33,7 @@ int main() {
     add_edge(0, 1, BGLGraph);
     BGLGraph[0].x = 4;
 
+    CartesianGraph cg({2, 3, 4});
+
     return 0;
 }

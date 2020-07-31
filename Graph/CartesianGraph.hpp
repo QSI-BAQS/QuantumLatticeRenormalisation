@@ -30,7 +30,11 @@ class CartesianGraph {
     // "mercedes" = false is random probability.
     // "mercedes" = true follows KLM fusion probabilities.
 
-    CartesianGraph(vertex_ind nodeCount, double probability, vec3d size, bool mercedes);
+    explicit CartesianGraph(vec3d bounding_size,
+            bool mercedes = true,
+            double seed = 0,
+            vec3d offset = {0, 0, 0},
+            double prob_success = 0.75);
 
     // Create a graph register with no edges and the specified number of nodes.
     // CartesianGraph(vertex_ind node_count);
@@ -90,8 +94,11 @@ class CartesianGraph {
 
 
 private:
-    vec offset;
-    vec bounding_box;
+
+    // coordinate multiplexing to id function.
+    vertex_ind get_index(vec3d vector);
+    vec3d offset;
+    vec3d bounding_box;
 };
 
 #endif //GRAPH_HPP
