@@ -95,6 +95,10 @@ private:
     vertex_ind get_index(vec3d vector);
     vec3d offset;
     vec3d bounding_box;
+
+    void gen_edges_mercedes(double seed, double prob_success);
+
+    void gen_edges_simple(double seed, double prob_success);
 };
 
 #endif //GRAPH_HPP
