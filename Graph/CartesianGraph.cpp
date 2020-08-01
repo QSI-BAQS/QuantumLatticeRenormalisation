@@ -50,6 +50,10 @@ CartesianGraph::CartesianGraph(vec3d bounding_size, bool mercedes, double seed, 
             }
         }
     }
+}
+
+void CartesianGraph::gen_edges_mercedes(double seed, double prob_success) {
+    vertex_ind x = bounding_box.x, y = bounding_box.y, z = bounding_box.z;
     // random setup
     std::random_device rd;
     if(seed == 0){
@@ -60,42 +64,54 @@ CartesianGraph::CartesianGraph(vec3d bounding_size, bool mercedes, double seed, 
     std::uniform_real_distribution<> dist(0.0, 1.0);
     double bond_failure_rate = 1.0 - prob_success;
 
-    if(mercedes){
-        // mercedes method: See
-        // Gimeno-Segovia, Mercedes, et al.
-        // "From three-photon Greenberger-Horne-Zeilinger states to ballistic universal quantum computation."
-        // Physical review letters 115.2 (2015): 020502.
+    // mercedes method: See
+    // Gimeno-Segovia, Mercedes, et al.
+    // "From three-photon Greenberger-Horne-Zeilinger states to ballistic universal quantum computation."
+    // Physical review letters 115.2 (2015): 020502.
 
-        // Method source code modified from https://github.com/herr-d/photonic_lattice
+    // Method source code modified from https://github.com/herr-d/photonic_lattice
 
 
+}
+
+void CartesianGraph::gen_edges_simple(double seed, double prob_success) {
+    vertex_ind x = bounding_box.x, y = bounding_box.y, z = bounding_box.z;
+    // random setup
+    std::random_device rd;
+    if(seed == 0){
+        seed = rd();
     }
-    else{
-        // simple probability method.
-        // each edge has a chance of failing proportional to "probability".
-        for(int zi = 0; zi <z; zi++){
-            for(int yi = 0; yi < y; yi++){
-                for(int xi = 0; xi < x; xi++){
-                    if(zi > 0){
-                        if(dist(gen) > bond_failure_rate )
-                            add_edge(get_index({xi, yi, zi}),
-                                     get_index({xi, yi, zi - 1}),
-                                     graph);
-                    }
-                    if(yi > 0){
-                        if(dist(gen) > bond_failure_rate )
-                            add_edge(get_index({xi, yi, zi}),
-                                     get_index({xi, yi - 1, zi}),
-                                     graph);
-                    }
-                    if(xi > 0){
-                        if(dist(gen) > bond_failure_rate )
-                            add_edge(get_index({xi, yi, zi}),
-                                     get_index({xi - 1, yi, zi}),
-                                     graph);
-                    }
+    // mersenne_twister_engine seeded with rd() same generator as photonic_lattice
+    std::mt19937 gen(seed);
+    std::uniform_real_distribution<> dist(0.0, 1.0);
+    // inverting logic (no particular reason to do this)
+    double bond_failure_rate = 1.0 - prob_success;
 
+
+    // simple probability method.
+// each edge has a chance of failing proportional to "probability".
+    for(int zi = 0; zi <z; zi++){
+        for(int yi = 0; yi < y; yi++){
+            for(int xi = 0; xi < x; xi++){
+                if(zi > 0){
+                    if(dist(gen) > bond_failure_rate )
+                        add_edge(get_index({xi, yi, zi}),
+                                 get_index({xi, yi, zi - 1}),
+                                 graph);
                 }
+                if(yi > 0){
+                    if(dist(gen) > bond_failure_rate )
+                        add_edge(get_index({xi, yi, zi}),
+                                 get_index({xi, yi - 1, zi}),
+                                 graph);
+                }
+                if(xi > 0){
+                    if(dist(gen) > bond_failure_rate )
+                        add_edge(get_index({xi, yi, zi}),
+                                 get_index({xi - 1, yi, zi}),
+                                 graph);
+                }
+
             }
         }
     }
