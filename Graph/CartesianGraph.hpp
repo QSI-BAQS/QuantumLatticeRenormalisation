@@ -6,6 +6,11 @@
 #include "../basic_includes.hpp"
 #include <boost/graph/adjacency_list.hpp>
 using namespace boost;
+
+// this typedef for our graph data
+// we store the vector of each node's coordinates because
+// post-initialisation the id can change if we cut graphs. also
+// helps with statistics.
 typedef adjacency_list<vecS, vecS, undirectedS, vec3d> graph_type;
 
 
@@ -55,24 +60,14 @@ class CartesianGraph {
     // add the node, keeping its exisitng edges.
     // void add_node (CartesianVertex node);
 
-    // get the size of graph in terms of number of nodes.
-    vertex_ind get_size();
-
     // remove the provided nodes from the graph, and put them in a new graphRegister.
 //    CartesianGraph split(vertex_set<VertexIndex> nodes_to_split);
 
 
     // edge operations
-    // add_edge and del_edge will throw an exception if they would have no effect
-    // in addition to if the index is not found in the graph.
-    void add_edge(vertex_ind a, vertex_ind b);
-    void del_edge(vertex_ind a, vertex_ind b);
     void invert_edge(vertex_ind a, vertex_ind b);
 
 
-
-    // delete a node, and all of its edges(equivalent to Z_measure)
-    void del_node(vertex_ind index);
 
     // bool add_node_with_edges(const CartesianVertex&node, const vertex_set &neighbors);
 
@@ -91,7 +86,8 @@ class CartesianGraph {
     graph_list  inverted_Y_measure(const vertex_set& neighbors_a);
     graph_list  inverted_Z_measure(const vertex_set& neighbors_a);
 
-
+    // containing the BGL graph
+    graph_type graph;
 
 private:
 

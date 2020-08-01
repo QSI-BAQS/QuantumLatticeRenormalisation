@@ -2,6 +2,9 @@
 #include "CartesianGraph.hpp"
 
 
+void CartesianGraph::orbital(vertex_ind index) {
+
+}
 void CartesianGraph::X_measure(vertex_ind index, vertex_ind special_neighbor) {
 
 }
@@ -26,4 +29,3 @@ graph_list CartesianGraph::inverted_Y_measure(const vertex_set& neighbors_a) {
 graph_list CartesianGraph::inverted_Z_measure(const vertex_set& neighbors_a) {
     return graph_list();
 }
-
