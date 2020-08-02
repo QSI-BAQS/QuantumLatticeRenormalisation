@@ -34,7 +34,7 @@ CartesianGraph::CartesianGraph(vec3d bounding_size, vec3d offset) {
     bounding_box = bounding_size;
     this->offset = {0, 0, 0};
     // generate nodes and initial graph object
-    g = graph_type(x * y * z);
+    g = graph_t(x * y * z);
 
     // assign cartesian coordinates to nodes
     for (int zi = 0; zi < z; zi++) {

@@ -31,7 +31,7 @@ int main() {
     list<edge_t> edges = {{0, 3},
                           {0, 1}};
 
-    graph_type BGLGraph(5);
+    graph_t BGLGraph(5);
     add_edge(0, 1, BGLGraph);
     BGLGraph[0].x = 4;
     for (int i = 0; i < 10; i++) {

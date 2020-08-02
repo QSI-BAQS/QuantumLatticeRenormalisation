@@ -3,19 +3,14 @@
 
 
 void CartesianGraph::orbital(vertex_ind index) {
-    graph_traits<graph_type>::out_edge_iterator e_start, e_end;
-    graph_traits<graph_type>::adjacency_iterator a_inner, a_inner_end, a_outer, a_end;
+    out_edge_iterator_t e_start, e_end;
+    adj_iterator_t a_inner, a_inner_end, a_outer, a_end;
+    vertex_descriptor_t a_vertex = boost::get(index, g);
 
-
-    for (tie(e_start, e_end) = out_edges(index, g);
-         e_start != e_end; ++e_start) {
-
-
-    }
     // For every distinct pair in neighborhood(A), invert the edge in that pair
 
     // Outer loop: cover every index
-    for (tie(a_outer, a_end) = adjacent_vertices(index, g);
+    for (tie(a_outer, a_end) = adjacent_vertices(a_vertex, g);
          a_outer != a_end; ++a_outer) {
         // Inner loop: cover every index after the current outer index
 
