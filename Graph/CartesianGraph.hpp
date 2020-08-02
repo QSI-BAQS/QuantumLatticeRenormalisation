@@ -3,15 +3,10 @@
 #define GRAPH_HPP
 
 #include <list>
-#include "../basic_includes.hpp"
+#include "../common.hpp"
 #include <boost/graph/adjacency_list.hpp>
 using namespace boost;
 
-// this typedef for our graph data
-// we store the vector of each node's coordinates because
-// post-initialisation the id can change if we cut graphs. also
-// helps with statistics.
-typedef adjacency_list<vecS, vecS, undirectedS, vec3d> graph_type;
 
 
 
@@ -35,11 +30,7 @@ class CartesianGraph {
     // "mercedes" = false is random probability.
     // "mercedes" = true follows KLM fusion probabilities.
 
-    explicit CartesianGraph(vec3d bounding_size,
-            bool mercedes = true,
-            double seed = 0,
-            vec3d offset = {0, 0, 0},
-            double prob_success = 0.75);
+    explicit CartesianGraph(vec3d bounding_size, vec3d offset = {0, 0, 0});
 
     // Create a graph register with no edges and the specified number of nodes.
     // CartesianGraph(vertex_ind node_count);
@@ -48,6 +39,7 @@ class CartesianGraph {
     // sharing no edges.
     CartesianGraph(CartesianGraph  g1, const CartesianGraph& g2);
 
+    void load_edges(std::list<edge_t> edges_to_load);
 
     // add a node at the coordinates specified, with no edges.
     void add_node(vec3d coorinates);
@@ -87,7 +79,7 @@ class CartesianGraph {
     graph_list  inverted_Z_measure(const vertex_set& neighbors_a);
 
     // containing the BGL graph
-    graph_type graph;
+    graph_type g;
 
 private:
 

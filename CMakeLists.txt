@@ -20,11 +20,11 @@ add_executable(QuantumLatticeRenormalisation main.cpp
         foliation.hpp
         similarity.cpp
         similarity.hpp
-#        VF2Wrapper.cpp
-#        VF2Wrapper.hpp
+        #        VF2Wrapper.cpp
+        #        VF2Wrapper.hpp
         CandidateLookupTree.cpp
         CandidateLookupTree.hpp
-        basic_includes.hpp)
+        common.hpp)
 target_link_libraries(QuantumLatticeRenormalisation graphsim ${BOOST_LIBRARIES} Graph)
 
 add_executable(test_gen_distribution LatticeDistributionStatistics/test_gen_distribution.cpp)

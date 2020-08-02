@@ -28,16 +28,18 @@ int main() {
     // g1.print_adj_list();
     // g1.print_stabilizer();
 
+    list<edge_t> edges = {{0, 3},
+                          {0, 1}};
 
     graph_type BGLGraph(5);
     add_edge(0, 1, BGLGraph);
     BGLGraph[0].x = 4;
-    for(int i=0;i<10;i++){
+    for (int i = 0; i < 10; i++) {
 
-        CartesianGraph cg({2, 3, 4}, false);
-        cout << "vertices: " << num_vertices(cg.graph) << endl;
-        cout << "edges: " << num_edges(cg.graph) << endl;
-        cg.invert_edge(0,1);
+        CartesianGraph cg({2, 3, 4}, vec3d());
+        cout << "vertices: " << num_vertices(cg.g) << endl;
+        cout << "edges: " << num_edges(cg.g) << endl;
+        cg.invert_edge(0, 1);
     }
     return 0;
 }

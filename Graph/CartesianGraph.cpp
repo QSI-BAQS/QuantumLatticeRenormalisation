@@ -28,25 +28,25 @@ void CartesianGraph::add_node(vec3d coorinates) {
 //     return NULL;
 // }
 
-CartesianGraph::CartesianGraph(vec3d bounding_size, bool mercedes, double seed, vec3d offset, double prob_success) {
+CartesianGraph::CartesianGraph(vec3d bounding_size, vec3d offset) {
     // indices from size struct
-    vertex_ind x=bounding_size.x, y=bounding_size.y, z=bounding_size.z;
+    vertex_ind x = bounding_size.x, y = bounding_size.y, z = bounding_size.z;
     bounding_box = bounding_size;
-    this->offset = {0,0,0};
+    this->offset = {0, 0, 0};
     // generate nodes and initial graph object
-    graph = graph_type(x * y *z);
+    g = graph_type(x * y * z);
 
-    // assign carteisan coordinates to nodes
-    for(int zi = 0; zi < z; zi++){
-        for(int yi = 0; yi < y; yi++){
-            for(int xi = 0; xi < x; xi++){
+    // assign cartesian coordinates to nodes
+    for (int zi = 0; zi < z; zi++) {
+        for (int yi = 0; yi < y; yi++) {
+            for (int xi = 0; xi < x; xi++) {
                 vertex_ind cur_index =
                         zi * x * y +
                         yi * x +
                         xi;
-                graph[cur_index].x = xi;
-                graph[cur_index].y = yi;
-                graph[cur_index].z = zi;
+                g[cur_index].x = xi;
+                g[cur_index].y = yi;
+                g[cur_index].z = zi;
             }
         }
     }
@@ -97,19 +97,19 @@ void CartesianGraph::gen_edges_simple(double seed, double prob_success) {
                     if(dist(gen) > bond_failure_rate )
                         add_edge(get_index({xi, yi, zi}),
                                  get_index({xi, yi, zi - 1}),
-                                 graph);
+                                 g);
                 }
                 if(yi > 0){
                     if(dist(gen) > bond_failure_rate )
                         add_edge(get_index({xi, yi, zi}),
                                  get_index({xi, yi - 1, zi}),
-                                 graph);
+                                 g);
                 }
                 if(xi > 0){
-                    if(dist(gen) > bond_failure_rate )
+                    if (dist(gen) > bond_failure_rate)
                         add_edge(get_index({xi, yi, zi}),
                                  get_index({xi - 1, yi, zi}),
-                                 graph);
+                                 g);
                 }
 
             }
@@ -117,16 +117,21 @@ void CartesianGraph::gen_edges_simple(double seed, double prob_success) {
     }
 }
 
+void CartesianGraph::load_edges(std::list<edge_t> edges_to_load) {
+    for (edge_t edge_i : edges_to_load) {
+        add_edge(std::get<0>(edge_i), std::get<1>(edge_i), g);
+    }
+}
+
 void CartesianGraph::invert_edge(vertex_ind a, vertex_ind b) {
     // Get the edge between those two nodes
-    auto edge_result = edge(a, b, graph);
-    if(std::get<1>(edge_result)){
+    auto edge_result = edge(a, b, g);
+    if (std::get<1>(edge_result)) {
         // There is an edge: remove it
-        remove_edge(a, b, graph);
-    }
-    else{
+        remove_edge(a, b, g);
+    } else {
         // There is no edge: add one
-        add_edge(a, b, graph);
+        add_edge(a, b, g);
     }
 }
 
