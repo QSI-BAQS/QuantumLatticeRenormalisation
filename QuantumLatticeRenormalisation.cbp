@@ -261,6 +261,56 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="Google_Tests_run">
+				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/googletest/Google_Tests_run" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/googletest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/graphsim"/>
+					<Add directory="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/googletest/lib/googletest"/>
+					<Add directory="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/googletest/lib/googletest/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/googletest/Makefile&quot;  VERBOSE=1 Google_Tests_run"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Google_Tests_run/fast">
+				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/googletest/Google_Tests_run" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/googletest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/graphsim"/>
+					<Add directory="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/googletest/lib/googletest"/>
+					<Add directory="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/googletest/lib/googletest/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/googletest/Makefile&quot;  VERBOSE=1 Google_Tests_run/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="gmock_main">
 				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/lib/libgmock_main.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/googletest/lib/googlemock"/>
@@ -527,6 +577,9 @@
 		</Unit>
 		<Unit filename="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/googletest/lib/googletest/src/gtest_main.cc">
 			<Option target="gtest_main"/>
+		</Unit>
+		<Unit filename="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/googletest/testGraph.cpp">
+			<Option target="Google_Tests_run"/>
 		</Unit>
 		<Unit filename="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/main.cpp">
 			<Option target="QuantumLatticeRenormalisation"/>

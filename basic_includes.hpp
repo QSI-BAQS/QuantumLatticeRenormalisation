@@ -6,6 +6,7 @@
 #include <list>
 #include <unordered_set>
 #include <unordered_map>
+#include <cstdint>
 
 class CartesianGraph;
 class CartesianVertex;
@@ -16,7 +17,7 @@ typedef CartesianVertex Node;
 
 // data structure typedefs
 typedef std::list<CartesianVertex> vertex_list;
-typedef u_int32_t vertex_ind;
+typedef uint32_t vertex_ind;
 
 typedef std::unordered_set<CartesianVertex> vertex_set;
 typedef std::list<CartesianGraph> graph_list;
