@@ -3,7 +3,7 @@
 #define SIMILARITY_HPP
 
 
-#include <graphsim.h>
+#include "GraphSim/graphsim.h"
 
 class Similarity {
 public:
