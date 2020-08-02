@@ -16,10 +16,10 @@ TEST (CartesianGraph, InitialisationRectangle){
 
 TEST(CartesianGraph, InvertEdge){
     CartesianGraph cg({2, 2, 2});
-    vertex_ind total1 = num_vertices(cg.graph);
+    vertex_ind total1 = num_edges(cg.graph);
     auto edge_result1 = edge(0, 1, cg.graph);
     cg.invert_edge(0, 1);
-    vertex_ind total2 = num_vertices(cg.graph);
+    vertex_ind total2 = num_edges(cg.graph);
     auto edge_result2 = edge(0, 1, cg.graph);
     EXPECT_NE(std::get<1>(edge_result1), std::get<1>(edge_result2));
     EXPECT_NE(total1, total2);
