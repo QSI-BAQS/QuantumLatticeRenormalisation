@@ -20,22 +20,26 @@ void CartesianGraph::orbital(vertex_ind index) {
         a_inner++;
         for (; a_inner != a_end; ++a_inner) {
             // Outer index is a_outer, inner index is a_inner
-
+            invert_edge(a_inner, a_outer, g);
         }
     }
 
 
 }
 void CartesianGraph::X_measure(vertex_ind index, vertex_ind special_neighbor) {
-
+    orbital(special_neighbor);
+    Y_measure(index);
 }
 
 void CartesianGraph::Y_measure(vertex_ind index) {
-
+    orbital(index);
+    clear_vertex(index, g);
+    remove_vertex(index, g);
 }
 
 void CartesianGraph::Z_measure(vertex_ind index) {
-
+    clear_vertex(index, g);
+    remove_vertex(index, g);
 }
 
 
