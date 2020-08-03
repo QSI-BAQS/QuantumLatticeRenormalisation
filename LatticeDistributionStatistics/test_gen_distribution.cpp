@@ -16,17 +16,17 @@ graph_t working_graph;
 
 template <typename Graph1,
         typename Graph2>
-struct vf2_test_callback {
+struct vf2_test_iso_callback {
 
-    vf2_test_callback(const Graph1& graph1, const Graph2& graph2)
+    vf2_test_iso_callback(const Graph1 &graph1, const Graph2 &graph2)
             : graph1_(graph1), graph2_(graph2) {}
 
-    template <typename CorrespondenceMap1To2,
+    template<typename CorrespondenceMap1To2,
             typename CorrespondenceMap2To1>
     bool operator()(CorrespondenceMap1To2 f, CorrespondenceMap2To1) const {
 
-        BGL_FORALL_VERTICES_T(v, graph1_, Graph1)
-                remove_vertex(get(vertex_index_t(), graph2_, get(f, v)), working_graph);
+        BGL_FORALL_VERTICES_T(v, graph1_, Graph1)remove_vertex(get(vertex_index_t(), graph2_, get(f, v)),
+                                                               working_graph);
         iso_callback_count++;
         return false;
     }
@@ -154,7 +154,7 @@ int main() {
             graph_t graph_boost = gen_random_boost_lattice(0.25, dimension);
             copy_graph(graph_boost, working_graph);
             // set new callback
-            vf2_test_callback<graph_t, graph_t> callback(graphUC1, working_graph);
+            vf2_test_iso_callback<graph_t, graph_t> callback(graphUC1, working_graph);
 
 
             // run vf2 until no isomorphisms are found.
