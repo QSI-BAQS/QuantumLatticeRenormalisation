@@ -16,7 +16,7 @@ find_package(Boost 1.57.0 COMPONENTS system filesystem REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
 
 # separate into library modules
-add_library(Graph Graph/CartesianGraph.cpp Graph/CartesianGraph.hpp Graph/operators.cpp)
+add_library(Graph Graph/CartesianGraph.cpp Graph/CartesianGraph.hpp Graph/operators.cpp Graph/structure_data.hpp)
 add_library(Foliation foliation.cpp foliation.hpp)
 add_library(Similarity similarity.cpp similarity.hpp)
 add_library(CandidateLookupTree CandidateLookupTree.cpp CandidateLookupTree.hpp)

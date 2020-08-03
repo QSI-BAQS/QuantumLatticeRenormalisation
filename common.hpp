@@ -55,8 +55,9 @@ typedef boost::graph_traits<graph_t>::adjacency_iterator adj_iterator_t;
 
 
 // their corresponding lists
-typedef std::list<vertex_t> vertex_descriptor_list_t;
-typedef std::list<edge_t> edge_descriptor_list_t;
+typedef std::list<vertex_t> vertex_list_t;
+typedef std::list<edge_t> edge_list_t;
+typedef std::list<edge_io_t> edge_io_list_t;
 
 
 #endif //BASIC_INCLUDES_HPP

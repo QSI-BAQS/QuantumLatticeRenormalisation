@@ -5,13 +5,7 @@
 #include "CartesianGraph.hpp"
 
 extern std::mt19937_64 rng;
-//
-// void CartesianGraph::add_node_with_edges(const CartesianVertex& node, const vertex_set& neighbors){
-//     vertex_set::iterator i = neighbors.begin();
-//     while(i != neighbors.end()) {
-//         add_edge(node, neighbors.find(int(i)));
-//     }
-// }
+
 
 CartesianGraph::CartesianGraph(CartesianGraph g1, const CartesianGraph &g2) : CartesianGraph(std::move(g1)) {
 
@@ -32,8 +26,14 @@ void CartesianGraph::add_node(vec3d coords) {
     g[vertex_new].x = coords.x;
     g[vertex_new].x = coords.y;
     g[vertex_new].x = coords.z;
-
 }
+
+void CartesianGraph::add_neighbors_to_node(vertex_ind index, const vertex_list_t &neighbors) {
+    for (const auto &i : neighbors) {
+        add_edge(index, i, g);
+    }
+}
+
 // CartesianVertex CartesianGraph::get_node(vec3d coord) {
 //     return 0;
 // }

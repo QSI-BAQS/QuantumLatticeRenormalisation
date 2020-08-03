@@ -51,6 +51,9 @@ public:
 
     // add a node at the coordinates specified, with no edges.
     void add_node(vec3d coords);
+
+    // add neighbors to the node. already-existing edges unaffected.
+    void add_neighbors_to_node(vertex_ind index, const vertex_list_t &neighbors);
     // Search for node at a logical position inside the GraphRegister based on coordinate
     // don't consider offset.
     // CartesianVertex get_node(vec3d coord);
@@ -68,16 +71,9 @@ public:
     void invert_edge(vertex_ind a, vertex_ind b);
 
 
-
-    // bool add_node_with_edges(const CartesianVertex&node, const vertex_set &neighbors);
-
-    // vertex_set get_neighborhood(vertex_ind a);
-
     // local pauli measurement operators (LPMOs)
     void X_measure(vertex_ind index, vertex_ind special_neighbor);
-
     void Y_measure(vertex_ind index);
-
     void Z_measure(vertex_ind index);
 
     void orbital(vertex_ind index);

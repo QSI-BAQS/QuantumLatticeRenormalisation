@@ -3,13 +3,13 @@
 #define VF2WRAPPER_HPP
 
 #include "Graph/CartesianGraph.hpp"
+#include "Graph/structure_data.hpp"
 #include <boost/graph/adjacency_list.hpp>
 #include <boost/graph/vf2_sub_graph_iso.hpp>
 
 // The way we interface to the VF2 algorithm is by configuring a callback to be run when an isomorphism is found.
-
-// In this file we have a variety of callbacks for this purpose. See VF2Wrapper.cpp:test_equal for examples on syntax.
-
+// In this file we have a variety of callbacks for this purpose.
+// See VF2Wrapper.cpp:test_isomorphic for examples on syntax.
 
 
 template<typename Graph1,
