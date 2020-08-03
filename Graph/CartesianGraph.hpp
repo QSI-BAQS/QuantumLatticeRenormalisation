@@ -67,24 +67,28 @@ class CartesianGraph {
 
     // local pauli measurement operators (LPMOs)
     void X_measure(vertex_ind index, vertex_ind special_neighbor);
+
     void Y_measure(vertex_ind index);
+
     void Z_measure(vertex_ind index);
+
     void orbital(vertex_ind index);
 
     // inverted LPMOs
     // each returns a list of all possible inverted LPMOs ...
     // TODO more detail on inversion process
-    graph_list  inverted_X_measure(const vertex_set& neighbors_a);
-    graph_list  inverted_Y_measure(const vertex_set& neighbors_a);
-    graph_list  inverted_Z_measure(const vertex_set& neighbors_a);
+    // graph_list  inverted_X_measure(const vertex_set& neighbors_a);
+    // graph_list  inverted_Y_measure(const vertex_set& neighbors_a);
+    // graph_list  inverted_Z_measure(const vertex_set& neighbors_a);
 
     // containing the BGL graph
-    graph_type g;
+    graph_t g;
 
 private:
 
     // coordinate multiplexing to id function.
     vertex_ind get_index(vec3d vector);
+
     vec3d offset;
     vec3d bounding_box;
 

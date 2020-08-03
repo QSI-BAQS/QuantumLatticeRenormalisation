@@ -6,7 +6,6 @@
 #include <unordered_set>
 #include <unordered_map>
 #include <cstdint>
-#include "Graph/CartesianGraph.hpp"
 #include <boost/graph/adjacency_list.hpp>
 
 class CartesianGraph;
@@ -34,7 +33,7 @@ typedef std::list<CartesianGraph> graph_list;
 // we store the vector of each node's coordinates because
 // post-initialisation the id can change if we cut graphs. also
 // helps with statistics.
-typedef boost::adjacency_list<vecS, vecS, undirectedS, vec3d> graph_t;
+typedef boost::adjacency_list<boost::vecS, boost::vecS, boost::undirectedS, vec3d> graph_t;
 
 // vertex index
 // typedef uint32_t vertex_ind;
