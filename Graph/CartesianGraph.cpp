@@ -13,12 +13,25 @@ extern std::mt19937_64 rng;
 //     }
 // }
 
-CartesianGraph::CartesianGraph(CartesianGraph g1, const CartesianGraph& g2) : CartesianGraph(std::move(g1)) {
+CartesianGraph::CartesianGraph(CartesianGraph g1, const CartesianGraph &g2) : CartesianGraph(std::move(g1)) {
 
 }
 
 
-void CartesianGraph::add_node(vec3d coorinates) {
+CartesianGraph::CartesianGraph(vertex_ind num_vertices) {
+    g = graph_t(num_vertices);
+    this->offset = {0, 0, 0};
+    this->bounding_box = {0, 0, 0};
+}
+
+void CartesianGraph::add_node(vec3d coords) {
+    // add the node
+    vertex_t vertex_new = add_vertex(g);
+
+    // add its coordinates
+    g[vertex_new].x = coords.x;
+    g[vertex_new].x = coords.y;
+    g[vertex_new].x = coords.z;
 
 }
 // CartesianVertex CartesianGraph::get_node(vec3d coord) {
@@ -32,7 +45,8 @@ CartesianGraph::CartesianGraph(vec3d bounding_size, vec3d offset) {
     // indices from size struct
     vertex_ind x = bounding_size.x, y = bounding_size.y, z = bounding_size.z;
     bounding_box = bounding_size;
-    this->offset = {0, 0, 0};
+
+    this->offset = offset;
     // generate nodes and initial graph object
     g = graph_t(x * y * z);
 

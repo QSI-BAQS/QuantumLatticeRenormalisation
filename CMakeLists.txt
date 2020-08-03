@@ -14,16 +14,20 @@ link_directories(graphsim)
 # Boost import
 find_package(Boost 1.57.0 COMPONENTS system filesystem REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
+
+# separate into library modules
 add_library(Graph Graph/CartesianGraph.cpp Graph/CartesianGraph.hpp Graph/operators.cpp)
+add_library(Foliation foliation.cpp foliation.hpp)
+add_library(Similarity similarity.cpp similarity.hpp)
+add_library(CandidateLookupTree CandidateLookupTree.cpp CandidateLookupTree.hpp)
+add_library(VF2Wrapper VF2Wrapper.cpp VF2Wrapper.hpp)
+
+# combine libraries in executable
 add_executable(QuantumLatticeRenormalisation main.cpp
-        foliation.cpp
-        foliation.hpp
-        similarity.cpp
-        similarity.hpp
-        #        VF2Wrapper.cpp
-        #        VF2Wrapper.hpp
-        CandidateLookupTree.cpp
-        CandidateLookupTree.hpp
+        Foliation
+        Similarity
+        VF2Wrapper
+        CandidateLookupTree
         common.hpp)
 target_link_libraries(QuantumLatticeRenormalisation graphsim ${BOOST_LIBRARIES} Graph)
 

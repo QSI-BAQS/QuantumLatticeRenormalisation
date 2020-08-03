@@ -24,14 +24,6 @@ class CartesianGraph {
 
 public:
 
-    // and not affected by offset or relative coordinates.
-    // methods may throw an exception if the index doesn't exist.
-    // Generate a lattice given a percolation rate (probability) and dimensions.
-    // "simple" is random probability.
-    // "mercedes" follows KLM fusion probabilities.
-    void gen_edges_mercedes(double seed, double prob_success);
-
-    void gen_edges_simple(double seed, double prob_success);
 
     explicit CartesianGraph(vec3d bounding_size, vec3d offset = {0, 0, 0});
 
@@ -42,10 +34,23 @@ public:
     // sharing no edges.
     CartesianGraph(CartesianGraph g1, const CartesianGraph &g2);
 
+    // Empty constructor (don't make any vertices - useful if we want a specific vertex structure)
+    CartesianGraph(vertex_ind num_vertices);
+
+    // and not affected by offset or relative coordinates.
+    // methods may throw an exception if the index doesn't exist.
+    // Generate a lattice given a percolation rate (probability) and dimensions.
+    // "simple" is random probability.
+    // "mercedes" follows KLM fusion probabilities.
+    void gen_edges_mercedes(double seed, double prob_success);
+
+    void gen_edges_simple(double seed, double prob_success);
+
+    // Load edges from a simple list. Nice data input formatting.
     void load_edges(const std::list<edge_io_t> &edges_to_load);
 
     // add a node at the coordinates specified, with no edges.
-    void add_node(vec3d coorinates);
+    void add_node(vec3d coords);
     // Search for node at a logical position inside the GraphRegister based on coordinate
     // don't consider offset.
     // CartesianVertex get_node(vec3d coord);
