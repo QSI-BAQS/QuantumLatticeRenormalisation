@@ -28,8 +28,8 @@ int main() {
     // g1.print_adj_list();
     // g1.print_stabilizer();
 
-    list<edge_t> edges = {{0, 3},
-                          {0, 1}};
+    list<edge_io_t> edges = {{0, 3},
+                             {0, 1}};
 
     graph_t BGLGraph(5);
     add_edge(0, 1, BGLGraph);

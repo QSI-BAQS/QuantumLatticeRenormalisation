@@ -117,8 +117,8 @@ void CartesianGraph::gen_edges_simple(double seed, double prob_success) {
     }
 }
 
-void CartesianGraph::load_edges(std::list<edge_t> edges_to_load) {
-    for (edge_t edge_i : edges_to_load) {
+void CartesianGraph::load_edges(const std::list<edge_io_t> &edges_to_load) {
+    for (edge_io_t edge_i : edges_to_load) {
         add_edge(std::get<0>(edge_i), std::get<1>(edge_i), g);
     }
 }
@@ -126,6 +126,7 @@ void CartesianGraph::load_edges(std::list<edge_t> edges_to_load) {
 void CartesianGraph::invert_edge(vertex_ind a, vertex_ind b) {
     // Get the edge between those two nodes
     auto edge_result = edge(a, b, g);
+    // second part of the pair (tuple) is a bool indicating whether edge exists. access with std::get<1>
     if (std::get<1>(edge_result)) {
         // There is an edge: remove it
         remove_edge(a, b, g);

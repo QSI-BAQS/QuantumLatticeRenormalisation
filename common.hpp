@@ -40,12 +40,12 @@ typedef boost::adjacency_list<boost::vecS, boost::vecS, boost::undirectedS, vec3
 typedef boost::graph_traits<graph_t>::vertices_size_type vertex_ind;
 
 
-// edge is a pair of indices
-typedef std::pair<vertex_ind, vertex_ind> edge_t;
+// edge used for data input, since we can format it neatly
+typedef std::pair<vertex_ind, vertex_ind> edge_io_t;
 
 // vertex and edge descriptor
-typedef boost::graph_traits<graph_t>::vertex_descriptor vertex_descriptor_t;
-typedef boost::graph_traits<graph_t>::edge_descriptor edge_descriptor_t;
+typedef boost::graph_traits<graph_t>::vertex_descriptor vertex_t;
+typedef boost::graph_traits<graph_t>::edge_descriptor edge_t;
 
 // out_edge_iterator, vertex_iterator, adjacency_iterator
 // adjacency_iterator is for neighborhood detection
@@ -55,8 +55,8 @@ typedef boost::graph_traits<graph_t>::adjacency_iterator adj_iterator_t;
 
 
 // their corresponding lists
-typedef std::list<vertex_descriptor_t> vertex_descriptor_list_t;
-typedef std::list<edge_descriptor_t> edge_descriptor_list_t;
+typedef std::list<vertex_t> vertex_descriptor_list_t;
+typedef std::list<edge_t> edge_descriptor_list_t;
 
 
 #endif //BASIC_INCLUDES_HPP

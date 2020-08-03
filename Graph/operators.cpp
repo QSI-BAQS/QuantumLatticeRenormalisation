@@ -5,7 +5,7 @@
 void CartesianGraph::orbital(vertex_ind index) {
     out_edge_iterator_t e_start, e_end;
     adj_iterator_t a_inner, a_inner_end, a_outer, a_end;
-    vertex_descriptor_t a_vertex = vertex(index, g);
+    vertex_t a_vertex = vertex(index, g);
 
     // For every distinct pair in neighborhood(A), invert the edge in that pair
 
@@ -20,7 +20,7 @@ void CartesianGraph::orbital(vertex_ind index) {
         a_inner++;
         for (; a_inner != a_end; ++a_inner) {
             // Outer index is a_outer, inner index is a_inner
-            invert_edge(a_inner, a_outer, g);
+            invert_edge(*a_inner, *a_outer);
         }
     }
 

@@ -9,6 +9,7 @@
 using namespace boost;
 typedef adjacency_list<setS, vecS, bidirectionalS> graph_t;
 
+// This file is for our preliminary results regarding distribution statistics of lattices.
 
 int iso_callback_count;
 graph_t working_graph;

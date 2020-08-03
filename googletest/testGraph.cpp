@@ -36,3 +36,41 @@ TEST(CartesianGraph, LoadEdges) {
     EXPECT_TRUE(std::get<1>(edge(0, 1, cg.g)));
     EXPECT_FALSE(std::get<1>(edge(0, 2, cg.g)));
 }
+
+TEST(CartesianGraph, orbital) {
+    CartesianGraph cg({3, 3, 3});
+    cg.load_edges({{0, 1},
+                   {1, 2},
+                   {2, 3}});
+    cg.orbital(2);
+    EXPECT_TRUE(std::get<1>(edge(1, 3, cg.g)));
+    EXPECT_EQ(num_edges(cg.g), 4);
+
+}
+
+TEST(CartesianGraph, Z_measure) {
+    CartesianGraph cg({3, 3, 3});
+    cg.load_edges({{0, 1},
+                   {1, 2}});
+    cg.Z_measure(1);
+    EXPECT_FALSE(std::get<1>(edge(0, 2, cg.g)));
+    EXPECT_EQ(num_edges(cg.g), 0);
+}
+
+TEST(CartesianGraph, Y_measure) {
+    CartesianGraph cg({3, 3, 3});
+    cg.load_edges({{0, 1},
+                   {1, 2},
+                   {2, 3}});
+    cg.Y_measure(2);
+    // index of vertex 3 "3" changes to "2" with Y_measure
+    EXPECT_TRUE(std::get<1>(edge(1, 2, cg.g)));
+    EXPECT_EQ(num_edges(cg.g), 2);
+    EXPECT_EQ(num_vertices(cg.g), 26);
+
+}
+
+TEST(CartesianGraph, X_measure) {
+
+}
+
