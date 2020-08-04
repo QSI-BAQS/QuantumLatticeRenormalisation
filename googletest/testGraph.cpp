@@ -94,3 +94,30 @@ TEST(VF2Wrapper, test_isomorphic) {
     ASSERT_TRUE(result);
 }
 
+TEST(operators, combinations_forall_K) {
+    const char *target = "0 \n"
+                         "1 \n"
+                         "2 \n"
+                         "3 \n"
+                         "0 1 \n"
+                         "0 2 \n"
+                         "0 3 \n"
+                         "1 2 \n"
+                         "1 3 \n"
+                         "2 3 \n"
+                         "0 1 2 \n"
+                         "0 1 3 \n"
+                         "0 2 3 \n"
+                         "1 2 3 \n";
+    std::string source;
+    auto big_list = combinations_forall_K(4);
+    for (const auto &medium_list : big_list) {
+        for (const auto &small_list : medium_list) {
+            for (auto index : small_list) {
+                source += std::to_string(index) + " ";
+            }
+            source += "\n";
+        }
+    }
+    ASSERT_EQ(target, source);
+}

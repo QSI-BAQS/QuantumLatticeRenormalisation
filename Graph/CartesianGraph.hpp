@@ -94,9 +94,6 @@ public:
     // TODO more detail on inversion process
 
 
-    std::list<std::list<int>> comb(int N, int K);
-
-    std::list<std::list<std::list<int>>> combinations_forall_K(int N);
 
     graph_list_raw inverted_X_measure();
 
@@ -116,5 +113,9 @@ private:
     vec3d bounding_box;
 
 };
+
+std::list<std::list<int>> combinations(int N, int K);
+
+std::list<std::list<std::list<int>>> combinations_forall_K(int N);
 
 #endif //GRAPH_HPP

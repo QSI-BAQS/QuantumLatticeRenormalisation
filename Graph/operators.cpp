@@ -48,7 +48,7 @@ void CartesianGraph::Z_measure(vertex_ind index) {
 // double-list of combinations
 // depth-0 is for each combination
 // depth-1 is for each index
-std::list<std::list<int>> CartesianGraph::comb(int N, int K) {
+std::list<std::list<int>> combinations(int N, int K) {
     std::string bitmask(K, 1); // K leading 1's
     bitmask.resize(N, 0); // N-K trailing 0's
 
@@ -68,33 +68,46 @@ std::list<std::list<int>> CartesianGraph::comb(int N, int K) {
 }
 
 // Triple list! waaaH!
-// depth
-std::list<std::list<std::list<int>>> CartesianGraph::combinations_forall_K(int N) {
+// Could probably do it just with double list. Maybe there are some triviality rules
+// for certain K related to N though, for optimisation in the measurements.
+std::list<std::list<std::list<int>>> combinations_forall_K(int N) {
     std::list<std::list<std::list<int>>> big_list;
     for (int i = 1; i < N; i++) {
-
+        big_list.push_back(combinations(N, i));
     }
-
-
     return big_list;
 }
 
 // Inverted measurement operators
 // Non-cartesian approach
 graph_list_raw CartesianGraph::inverted_Z_measure() {
+    // temporary reference copy
     graph_t g_temp(g);
     // all the vertices in the original graph
     auto vertices_all = vertices(g);
+    // Output data structure
+    graph_list_raw out;
     // Add node A - won't have coordinates in this version
     auto A = add_vertex(g_temp);
 
     // For every permutation of order 1..|g|
-
-
-    // copy to g_dash
-    graph_t g_dash(g_temp);
-
-
+    // Pretty messy loops... Will probably optimise with heuristics later
+    auto combinations = combinations_forall_K(num_vertices(g));
+    for (auto combination_size_k : combinations) {
+        for (const auto &combination : combinations) {
+            // copy to g_dash
+            graph_t g_dash(g_temp);
+            for (const auto &index : combination) {
+                for (auto ii : index) {
+                    // add edges to the matching permutations
+                    add_edge(A, ii, g_dash);
+                }
+            }
+            // add to our global set
+            out.push_back(g_dash);
+        }
+    }
+    return out;
 }
 
 graph_list_raw CartesianGraph::inverted_Y_measure() {
