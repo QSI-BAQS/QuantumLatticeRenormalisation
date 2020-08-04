@@ -47,7 +47,7 @@ typedef boost::graph_traits<graph_t>::edge_descriptor edge_t;
 
 // out_edge_iterator, vertex_iterator, adjacency_iterator
 // adjacency_iterator is for neighborhood detection
-typedef boost::graph_traits<graph_t>::out_edge_iterator out_edge_iterator_t;
+typedef boost::graph_traits<graph_t>::edge_iterator edge_iterator_t;
 typedef boost::graph_traits<graph_t>::vertex_iterator vertex_iterator_t;
 typedef boost::graph_traits<graph_t>::adjacency_iterator adj_iterator_t;
 

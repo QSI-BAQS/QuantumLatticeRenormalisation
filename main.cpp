@@ -27,7 +27,7 @@ int main() {
         int i = 1;
         std::cout << "Graph " << i << ": ";
         i++;
-        out_edge_iterator_t e_start, e_end;
+        edge_iterator_t e_start, e_end;
         boost::tie(e_start, e_end) = edges(graph);
         for (; e_start != e_end; ++e_start)
             std::cout << "(" << source(*e_start, graph)
