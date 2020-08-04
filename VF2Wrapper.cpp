@@ -6,8 +6,7 @@
 bool test_isomorphic(const CartesianGraph &source, const CartesianGraph &target) {
     auto source_v = num_vertices(source.g), target_v = num_vertices(target.g);
     // if they don't have the same number of nodes, they aren't isomorphic
-    // target must be smaller than source.
-    if (source_v == target_v || source_v < target_v) {
+    if (source_v != target_v) {
         return false;
     }
 
@@ -21,9 +20,8 @@ bool test_isomorphic(const CartesianGraph &source, const CartesianGraph &target)
 
 std::list<CartesianGraph> get_isomorphisms(const CartesianGraph &source, const CartesianGraph &target) {
     auto source_v = num_vertices(source.g), target_v = num_vertices(target.g);
-    // if they don't have the same number of nodes, they aren't isomorphic
-    // target must be smaller than source.
-    if (source_v == target_v || source_v < target_v) {
+    // target must be smaller than or equal to source. (in terms of nodes)
+    if (source_v < target_v) {
         // return empty list.
         return std::list<CartesianGraph>();
     }
@@ -33,6 +31,6 @@ std::list<CartesianGraph> get_isomorphisms(const CartesianGraph &source, const C
     // Print out all subgraph isomorphism mappings between graph1 and graph2.
     // Vertices and edges are assumed to be always equivalent.
     vf2_subgraph_iso(source.g, target.g, callback);
-    subgrap
 
+    return std::list<CartesianGraph>();
 }

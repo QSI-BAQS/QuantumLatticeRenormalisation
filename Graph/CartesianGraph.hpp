@@ -52,6 +52,9 @@ public:
     // add a node at the coordinates specified, with no edges.
     void add_node(vec3d coords);
 
+    // run add_node for a list. only run if there are no nodes. if nodes are already present, do nothing.
+    void load_nodes(const std::list<vec3d> &coords);
+
     // add neighbors to the node. already-existing edges unaffected.
     void add_neighbors_to_node(vertex_ind index, const vertex_list_t &neighbors);
     // Search for node at a logical position inside the GraphRegister based on coordinate

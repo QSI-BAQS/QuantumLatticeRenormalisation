@@ -15,7 +15,9 @@
 
 
 
+bool test_isomorphic(const CartesianGraph &source, const CartesianGraph &target);
 
+std::list<CartesianGraph> get_isomorphisms(const CartesianGraph &source, const CartesianGraph &target);
 
 // Return true on the first isomorphism found, and discard the result.
 template<typename Graph1,
@@ -39,13 +41,12 @@ struct vf2_test_iso_callback {
         return false;
     }
 
-    bool found;
+    mutable bool found;
 private:
     const Graph1 &graph1_;
     const Graph2 &graph2_;
 };
 
-sub
 
 // Get each isomorphism and return it.
 template<typename Graph1,

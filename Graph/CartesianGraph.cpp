@@ -28,6 +28,15 @@ void CartesianGraph::add_node(vec3d coords) {
     g[vertex_new].x = coords.z;
 }
 
+void CartesianGraph::load_nodes(const std::list<vec3d> &coords) {
+    if (num_vertices(g) != 0) {
+        return;
+    }
+    for (auto coord : coords) {
+        add_node(coord);
+    }
+}
+
 void CartesianGraph::add_neighbors_to_node(vertex_ind index, const vertex_list_t &neighbors) {
     for (const auto &i : neighbors) {
         add_edge(index, i, g);

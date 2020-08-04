@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 #include "../Graph/CartesianGraph.hpp"
-
+#include "../VF2Wrapper.hpp"
 TEST (CartesianGraph, InitialisationCube) {
     // vertex count for cube
     CartesianGraph cg({3, 3, 3}, vec3d());
@@ -72,5 +72,25 @@ TEST(CartesianGraph, Y_measure) {
 
 TEST(CartesianGraph, X_measure) {
 
+}
+
+TEST(VF2Wrapper, test_isomorphic) {
+    // testing isomorphism for a simple graph of 5 nodes
+    CartesianGraph cg1({5, 1, 1});
+    CartesianGraph cg2({1, 1, 5});
+    cg1.load_edges({
+                           {0, 1},
+                           {0, 2},
+                           {0, 3},
+                           {3, 4}
+                   });
+    cg2.load_edges({
+                           {1, 0},
+                           {1, 2},
+                           {1, 3},
+                           {3, 4}
+                   });
+    bool result = test_isomorphic(cg1, cg2);
+    ASSERT_TRUE(result);
 }
 
