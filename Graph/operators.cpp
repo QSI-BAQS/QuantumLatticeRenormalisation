@@ -23,8 +23,6 @@ void CartesianGraph::orbital(vertex_ind index) {
             invert_edge(*a_inner, *a_outer);
         }
     }
-
-
 }
 void CartesianGraph::X_measure(vertex_ind index, vertex_ind special_neighbor) {
     orbital(special_neighbor);
@@ -42,15 +40,67 @@ void CartesianGraph::Z_measure(vertex_ind index) {
     remove_vertex(index, g);
 }
 
+// Modified from http://rosettacode.org/wiki/Combinations#C.2B.2B
+// We need combinations for the inverted measures
+// since we know the internal storage of the vertex indices is from 0 to N
+// we don't need to change much here
 
-// graph_list CartesianGraph::inverted_X_measure(const vertex_set& neighbors_a) {
-//     return graph_list();
-// }
-//
-// graph_list CartesianGraph::inverted_Y_measure(const vertex_set& neighbors_a) {
-//     return graph_list();
-// }
-//
-// graph_list CartesianGraph::inverted_Z_measure(const vertex_set& neighbors_a) {
-//     return graph_list();
-// }
+// double-list of combinations
+// depth-0 is for each combination
+// depth-1 is for each index
+std::list<std::list<int>> CartesianGraph::comb(int N, int K) {
+    std::string bitmask(K, 1); // K leading 1's
+    bitmask.resize(N, 0); // N-K trailing 0's
+
+    std::list<std::list<int>> medium_list;
+    // print integers and permute bitmask
+    do {
+        std::list<int> small_list;
+        for (int i = 0; i < N; ++i) // [0..N-1] integers
+        {
+            if (bitmask[i]) {
+                small_list.push_back(i);
+            }
+        }
+        medium_list.push_back(small_list);
+    } while (std::prev_permutation(bitmask.begin(), bitmask.end()));
+    return medium_list;
+}
+
+// Triple list! waaaH!
+// depth
+std::list<std::list<std::list<int>>> CartesianGraph::combinations_forall_K(int N) {
+    std::list<std::list<std::list<int>>> big_list;
+    for (int i = 1; i < N; i++) {
+
+    }
+
+
+    return big_list;
+}
+
+// Inverted measurement operators
+// Non-cartesian approach
+graph_list_raw CartesianGraph::inverted_Z_measure() {
+    graph_t g_temp(g);
+    // all the vertices in the original graph
+    auto vertices_all = vertices(g);
+    // Add node A - won't have coordinates in this version
+    auto A = add_vertex(g_temp);
+
+    // For every permutation of order 1..|g|
+
+
+    // copy to g_dash
+    graph_t g_dash(g_temp);
+
+
+}
+
+graph_list_raw CartesianGraph::inverted_Y_measure() {
+
+}
+
+graph_list_raw CartesianGraph::inverted_X_measure() {
+
+}

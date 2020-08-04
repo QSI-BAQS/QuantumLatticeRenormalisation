@@ -19,5 +19,15 @@ int main() {
     //     cout << "edges: " << num_edges(cg.g) << endl;
     //     cg.invert_edge(0, 1);
     // }
+    CartesianGraph cg(3);
+    auto big_list = cg.combinations_forall_K(4);
+    for (const auto &medium_list : big_list) {
+        for (const auto &small_list : medium_list) {
+            for (auto index : small_list) {
+                std::cout << index << " ";
+            }
+            std::cout << std::endl;
+        }
+    }
     return 0;
 }

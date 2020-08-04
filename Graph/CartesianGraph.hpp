@@ -34,8 +34,14 @@ public:
     // sharing no edges.
     CartesianGraph(CartesianGraph g1, const CartesianGraph &g2);
 
+    // Double constructor with template
+    // Copy constructor from a BGL graph, using defaults for other things.
+    // don't care about dummy variable. just to prevent constructor ambiguity.
+    explicit CartesianGraph(vertex_ind num_vertices);
+
     // Empty constructor (don't make any vertices - useful if we want a specific vertex structure)
-    CartesianGraph(vertex_ind num_vertices);
+
+    CartesianGraph(const graph_t &g, bool dummy);
 
     // and not affected by offset or relative coordinates.
     // methods may throw an exception if the index doesn't exist.
@@ -76,7 +82,9 @@ public:
 
     // local pauli measurement operators (LPMOs)
     void X_measure(vertex_ind index, vertex_ind special_neighbor);
+
     void Y_measure(vertex_ind index);
+
     void Z_measure(vertex_ind index);
 
     void orbital(vertex_ind index);
@@ -84,9 +92,17 @@ public:
     // inverted LPMOs
     // each returns a list of all possible inverted LPMOs ...
     // TODO more detail on inversion process
-    // graph_list  inverted_X_measure(const vertex_set& neighbors_a);
-    // graph_list  inverted_Y_measure(const vertex_set& neighbors_a);
-    // graph_list  inverted_Z_measure(const vertex_set& neighbors_a);
+
+
+    std::list<std::list<int>> comb(int N, int K);
+
+    std::list<std::list<std::list<int>>> combinations_forall_K(int N);
+
+    graph_list_raw inverted_X_measure();
+
+    graph_list_raw inverted_Y_measure();
+
+    graph_list_raw inverted_Z_measure();
 
     // containing the BGL graph
     graph_t g;

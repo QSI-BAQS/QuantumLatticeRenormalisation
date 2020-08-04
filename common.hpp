@@ -26,8 +26,6 @@ enum direction {
 };
 
 // vertex = node
-typedef std::list<CartesianGraph> graph_list;
-
 
 // this typedef for our graph data
 // we store the vector of each node's coordinates because
@@ -54,10 +52,12 @@ typedef boost::graph_traits<graph_t>::vertex_iterator vertex_iterator_t;
 typedef boost::graph_traits<graph_t>::adjacency_iterator adj_iterator_t;
 
 
-// their corresponding lists
+// lists
 typedef std::list<vertex_t> vertex_list_t;
 typedef std::list<edge_t> edge_list_t;
 typedef std::list<edge_io_t> edge_io_list_t;
+typedef std::list<graph_t> graph_list_raw;
+typedef std::list<CartesianGraph> graph_list;
 
 
 #endif //BASIC_INCLUDES_HPP

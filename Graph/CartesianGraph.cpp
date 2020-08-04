@@ -11,11 +11,17 @@ CartesianGraph::CartesianGraph(CartesianGraph g1, const CartesianGraph &g2) : Ca
 
 }
 
-
 CartesianGraph::CartesianGraph(vertex_ind num_vertices) {
     g = graph_t(num_vertices);
     this->offset = {0, 0, 0};
     this->bounding_box = {0, 0, 0};
+}
+
+CartesianGraph::CartesianGraph(const graph_t &g, bool dummy) {
+    this->g = g;
+    this->offset = {0, 0, 0};
+    this->bounding_box = {0, 0, 0};
+
 }
 
 void CartesianGraph::add_node(vec3d coords) {
