@@ -22,6 +22,10 @@ add_library(Similarity similarity.cpp similarity.hpp)
 add_library(CandidateLookupTree CandidateLookupTree.cpp CandidateLookupTree.hpp)
 add_library(VF2Wrapper VF2Wrapper.cpp VF2Wrapper.hpp)
 
+# GraphViz
+
+add_library(GVWrapper graphviz_wrapper/gv_wrapper.cpp graphviz_wrapper/gv_wrapper.hpp)
+target_link_libraries(GVWrapper PUBLIC gvc)
 # combine libraries in executable
 add_executable(QuantumLatticeRenormalisation main.cpp
         Foliation
@@ -29,7 +33,7 @@ add_executable(QuantumLatticeRenormalisation main.cpp
         VF2Wrapper
         CandidateLookupTree
         common.hpp)
-target_link_libraries(QuantumLatticeRenormalisation graphsim ${BOOST_LIBRARIES} Graph)
+target_link_libraries(QuantumLatticeRenormalisation graphsim ${BOOST_LIBRARIES} Graph GVWrapper)
 
 add_executable(test_gen_distribution LatticeDistributionStatistics/test_gen_distribution.cpp)
 
