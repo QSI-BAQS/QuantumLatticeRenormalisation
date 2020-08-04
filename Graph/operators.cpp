@@ -3,7 +3,6 @@
 
 
 void CartesianGraph::orbital(vertex_ind index) {
-    out_edge_iterator_t e_start, e_end;
     adj_iterator_t a_inner, a_inner_end, a_outer, a_end;
     vertex_t a_vertex = vertex(index, g);
 
