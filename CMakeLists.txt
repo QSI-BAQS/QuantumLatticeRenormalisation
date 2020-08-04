@@ -24,7 +24,7 @@ add_library(VF2Wrapper VF2Wrapper.cpp VF2Wrapper.hpp)
 
 # GraphViz
 
-add_library(GVWrapper graphviz_wrapper/gv_wrapper.cpp graphviz_wrapper/gv_wrapper.hpp)
+add_library(GVWrapper GraphViz/gv_wrapper.cpp GraphViz/gv_wrapper.hpp)
 target_link_libraries(GVWrapper PUBLIC gvc)
 # combine libraries in executable
 add_executable(QuantumLatticeRenormalisation main.cpp
