@@ -70,3 +70,26 @@ TEST(operators, inverted_Y_measure) {
 
     ASSERT_EQ(target_o, source_o);
 }
+
+TEST(operators, inverted_X_measure) {
+    const char *target_o = "Graph 1: (0,1) (1,2) (3,0) (3,1) \n"
+                           "Graph 2: (0,1) (1,2) (3,1) (2,0) (3,0) (3,2) \n"
+                           "Graph 3: (0,1) (1,2) (3,2) (3,1) \n"
+                           "Graph 4: (1,2) (3,0) (3,1) \n"
+                           "Graph 5: (1,2) (3,0) (3,1) (3,2) \n"
+                           "Graph 6: (0,1) (3,0) (2,0) (3,1) \n"
+                           "Graph 7: (1,2) (3,2) (2,0) (3,1) \n"
+                           "Graph 8: (0,1) (3,1) (3,2) (3,0) \n"
+                           "Graph 9: (0,1) (3,1) (3,2) \n"
+                           "Graph 10: (3,0) (3,1) (2,0) \n"
+                           "Graph 11: (3,0) (3,1) (3,2) (2,0) \n"
+                           "Graph 12: (3,1) (3,2) (2,0) \n";
+    CartesianGraph cg(3);
+    cg.load_edges({{0, 1},
+                   {1, 2}});
+    graph_list_raw inv_x_lpmo = cg.inverted_X_measure();
+    auto source_o = print_edges_all_graphs(inv_x_lpmo);
+    vec3d vec({2, 2, 2});
+    ASSERT_EQ(target_o, source_o);
+
+}
