@@ -4,6 +4,13 @@
 
 
 bool test_isomorphic(const CartesianGraph &source, const CartesianGraph &target) {
+    // Sort of a cheat- We are using subgraph_iso, even though BGL has a "true" isomorphism algo implemented.
+    // Unfortunately (and somewhat ironically), I think running the subgraph_iso is faster for testing regular iso,
+    // as long as we confirm the node counts before passing in.
+
+    // If I want to test coordinates for equality though, I'd have to use the "true" iso algo.
+    // That use case is not the original intention for coordinates anyway... Can probably just do without it.
+
     auto source_v = num_vertices(source.g), target_v = num_vertices(target.g);
     // if they don't have the same number of nodes, they aren't isomorphic
     if (source_v != target_v) {

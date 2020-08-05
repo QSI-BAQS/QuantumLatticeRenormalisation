@@ -89,17 +89,12 @@ public:
 
     void orbital(vertex_ind index);
 
-    // inverted LPMOs
-    // each returns a list of all possible inverted LPMOs ...
-    // TODO more detail on inversion process
+    // inverted PLMOs
+    graph_list_raw inverted_X_measure() const;
 
+    graph_list_raw inverted_Y_measure() const;
 
-
-    graph_list_raw inverted_X_measure();
-
-    graph_list_raw inverted_Y_measure();
-
-    graph_list_raw inverted_Z_measure();
+    graph_list_raw inverted_Z_measure() const;
 
     // containing the BGL graph
     graph_t g;
