@@ -14,18 +14,28 @@ link_directories(graphsim)
 # Boost import
 find_package(Boost 1.57.0 COMPONENTS system filesystem REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
-add_library(Graph Graph/CartesianGraph.cpp Graph/CartesianGraph.hpp Graph/operators.cpp)
+
+# separate into library modules
+add_library(Graph Graph/CartesianGraph.cpp Graph/CartesianGraph.hpp Graph/operators.cpp Graph/structure_data.hpp)
+add_library(Foliation foliation.cpp foliation.hpp)
+add_library(Similarity similarity.cpp similarity.hpp)
+add_library(CandidateLookupTree CandidateLookupTree.cpp CandidateLookupTree.hpp)
+add_library(Debug Debug/DebugGraph.cpp Debug/DebugGraph.hpp)
+add_library(VF2Wrapper VF2Wrapper.cpp VF2Wrapper.hpp)
+
+# GraphViz
+
+add_library(GVWrapper GraphViz/gv_wrapper.cpp GraphViz/gv_wrapper.hpp)
+target_link_libraries(GVWrapper PUBLIC gvc)
+# combine libraries in executable
 add_executable(QuantumLatticeRenormalisation main.cpp
-        foliation.cpp
-        foliation.hpp
-        similarity.cpp
-        similarity.hpp
-#        VF2Wrapper.cpp
-#        VF2Wrapper.hpp
-        CandidateLookupTree.cpp
-        CandidateLookupTree.hpp
-        basic_includes.hpp)
-target_link_libraries(QuantumLatticeRenormalisation graphsim ${BOOST_LIBRARIES} Graph)
+        Foliation
+        Similarity
+        VF2Wrapper
+        CandidateLookupTree
+        Debug
+        common.hpp)
+target_link_libraries(QuantumLatticeRenormalisation graphsim ${BOOST_LIBRARIES} Graph GVWrapper Debug)
 
 add_executable(test_gen_distribution LatticeDistributionStatistics/test_gen_distribution.cpp)
 
