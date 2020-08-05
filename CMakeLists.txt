@@ -3,6 +3,10 @@ project(QuantumLatticeRenormalisation)
 
 set(CMAKE_CXX_STANDARD 14)
 
+# Debug mode
+SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g")
+
+
 # Graphsim import
 set(GRAPHSIM_DIR ${CMAKE_SOURCE_DIR}/GraphSim)
 add_library(graphsim ${GRAPHSIM_DIR}/graphsim.cpp ${GRAPHSIM_DIR}/loccliff.cpp ${GRAPHSIM_DIR}/stabilizer.cpp LatticeDistributionStatistics/test_gen_distribution.cpp)
