@@ -35,7 +35,7 @@ add_executable(QuantumLatticeRenormalisation main.cpp
         CandidateLookupTree
         Debug
         common.hpp)
-target_link_libraries(QuantumLatticeRenormalisation graphsim ${BOOST_LIBRARIES} Graph GVWrapper Debug)
+target_link_libraries(QuantumLatticeRenormalisation graphsim ${BOOST_LIBRARIES} Graph GVWrapper Debug Foliation Similarity)
 
 add_executable(test_gen_distribution LatticeDistributionStatistics/test_gen_distribution.cpp)
 

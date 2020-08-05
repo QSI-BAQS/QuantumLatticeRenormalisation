@@ -82,8 +82,6 @@ std::list<std::list<std::list<int>>> combinations_forall_K(int N) {
 graph_list_raw CartesianGraph::inverted_Z_measure() {
     // temporary reference copy
     graph_t g_temp(g);
-    // all the vertices in the original graph
-    auto vertices_all = vertices(g);
     // Output data structure
     graph_list_raw out;
     // Add node A - won't have coordinates in this version

@@ -25,7 +25,7 @@ int main() {
                    {1, 2}});
     graph_list_raw inv_z_lpmo = cg.inverted_Z_measure();
     cout << print_edges_all_graphs(inv_z_lpmo);
-
+    vec3d vec({2, 2, 2});
 
     return 0;
 }

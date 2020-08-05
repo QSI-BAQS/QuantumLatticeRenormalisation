@@ -30,8 +30,8 @@ void CartesianGraph::add_node(vec3d coords) {
 
     // add its coordinates
     g[vertex_new].x = coords.x;
-    g[vertex_new].x = coords.y;
-    g[vertex_new].x = coords.z;
+    g[vertex_new].y = coords.y;
+    g[vertex_new].z = coords.z;
 }
 
 void CartesianGraph::load_nodes(const std::list<vec3d> &coords) {
