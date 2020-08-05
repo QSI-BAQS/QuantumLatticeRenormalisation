@@ -2,6 +2,7 @@
 #include "GraphSim/graphsim.h"
 #include "Graph/CartesianGraph.hpp"
 #include "Graph/structure_data.hpp"
+#include "Debug/DebugGraph.hpp"
 
 int main() {
 
@@ -23,18 +24,7 @@ int main() {
     cg.load_edges({{0, 1},
                    {1, 2}});
     graph_list_raw inv_z_lpmo = cg.inverted_Z_measure();
-    for (const auto &graph : inv_z_lpmo) {
-        int i = 1;
-        std::cout << "Graph " << i << ": ";
-        i++;
-        edge_iterator_t e_start, e_end;
-        boost::tie(e_start, e_end) = edges(graph);
-        for (; e_start != e_end; ++e_start)
-            std::cout << "(" << source(*e_start, graph)
-                      << "," << target(*e_start, graph) << ") ";
-        std::cout << std::endl;
-
-    }
+    cout << print_edges_all_graphs(inv_z_lpmo);
 
 
     return 0;

@@ -20,6 +20,7 @@ add_library(Graph Graph/CartesianGraph.cpp Graph/CartesianGraph.hpp Graph/operat
 add_library(Foliation foliation.cpp foliation.hpp)
 add_library(Similarity similarity.cpp similarity.hpp)
 add_library(CandidateLookupTree CandidateLookupTree.cpp CandidateLookupTree.hpp)
+add_library(Debug Debug/DebugGraph.cpp Debug/DebugGraph.hpp)
 add_library(VF2Wrapper VF2Wrapper.cpp VF2Wrapper.hpp)
 
 # GraphViz
@@ -32,8 +33,9 @@ add_executable(QuantumLatticeRenormalisation main.cpp
         Similarity
         VF2Wrapper
         CandidateLookupTree
+        Debug
         common.hpp)
-target_link_libraries(QuantumLatticeRenormalisation graphsim ${BOOST_LIBRARIES} Graph GVWrapper)
+target_link_libraries(QuantumLatticeRenormalisation graphsim ${BOOST_LIBRARIES} Graph GVWrapper Debug)
 
 add_executable(test_gen_distribution LatticeDistributionStatistics/test_gen_distribution.cpp)
 

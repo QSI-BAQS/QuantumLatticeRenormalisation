@@ -94,16 +94,16 @@ graph_list_raw CartesianGraph::inverted_Z_measure() {
     auto combinations = combinations_forall_K(num_vertices(g));
     for (auto combination_size_k : combinations) {
         for (const auto &combination : combinations) {
-            // copy to g_dash
-            graph_t g_dash(g_temp);
-            for (const auto &index : combination) {
-                for (auto ii : index) {
+            for (const auto &comb : combination) {
+                // copy to g_dash
+                graph_t g_dash(g_temp);
+                for (auto ii : comb) {
                     // add edges to the matching permutations
                     add_edge(A, ii, g_dash);
                 }
+                // add to our global set
+                out.push_back(g_dash);
             }
-            // add to our global set
-            out.push_back(g_dash);
         }
     }
     return out;
