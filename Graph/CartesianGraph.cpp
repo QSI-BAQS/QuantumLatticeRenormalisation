@@ -15,6 +15,7 @@ CartesianGraph::CartesianGraph(vertex_ind num_vertices) {
     g = graph_t(num_vertices);
     this->offset = {0, 0, 0};
     this->bounding_box = {0, 0, 0};
+    vec3d oops({0,1,1});
 }
 
 CartesianGraph::CartesianGraph(const graph_t &g, bool dummy) {
