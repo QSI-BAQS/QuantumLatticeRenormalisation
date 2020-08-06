@@ -17,16 +17,6 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="install/strip">
-				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 install/strip"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="install/local">
 				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
 				<Option type="4"/>
@@ -47,64 +37,18 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="QuantumLatticeRenormalisation">
-				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/QuantumLatticeRenormalisation" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/graphsim"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 QuantumLatticeRenormalisation"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="QuantumLatticeRenormalisation/fast">
-				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/QuantumLatticeRenormalisation" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/graphsim"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 QuantumLatticeRenormalisation/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="install">
+			<Target title="edit_cache">
 				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 install"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 edit_cache"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="GVWrapper">
-				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/libGVWrapper.a" prefix_auto="0" extension_auto="0"/>
+			<Target title="Similarity">
+				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/libSimilarity.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -120,14 +64,14 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 GVWrapper"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 Similarity"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="GVWrapper/fast">
-				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/libGVWrapper.a" prefix_auto="0" extension_auto="0"/>
+			<Target title="Similarity/fast">
+				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/libSimilarity.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -143,53 +87,17 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 GVWrapper/fast"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 Similarity/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="Graph">
-				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/libGraph.a" prefix_auto="0" extension_auto="0"/>
+			<Target title="install/strip">
 				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
-				<Option object_output="./"/>
-				<Option type="2"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/graphsim"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
+				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 Graph"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="Graph/fast">
-				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/libGraph.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
-				<Option object_output="./"/>
-				<Option type="2"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/graphsim"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 Graph/fast"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 install/strip"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
@@ -297,54 +205,8 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="test_gen_distribution">
-				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/test_gen_distribution" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/graphsim"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 test_gen_distribution"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="test_gen_distribution/fast">
-				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/test_gen_distribution" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/graphsim"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 test_gen_distribution/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="Similarity">
-				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/libSimilarity.a" prefix_auto="0" extension_auto="0"/>
+			<Target title="Graph">
+				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/libGraph.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -360,14 +222,14 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 Similarity"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 Graph"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="Similarity/fast">
-				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/libSimilarity.a" prefix_auto="0" extension_auto="0"/>
+			<Target title="Graph/fast">
+				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/libGraph.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -383,24 +245,14 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 Similarity/fast"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 Graph/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="VF2Wrapper">
-				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/libVF2Wrapper.a" prefix_auto="0" extension_auto="0"/>
+			<Target title="GVWrapper">
+				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/libGVWrapper.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -416,14 +268,14 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 VF2Wrapper"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 GVWrapper"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="VF2Wrapper/fast">
-				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/libVF2Wrapper.a" prefix_auto="0" extension_auto="0"/>
+			<Target title="GVWrapper/fast">
+				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/libGVWrapper.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -439,7 +291,7 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 VF2Wrapper/fast"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 GVWrapper/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
@@ -491,6 +343,52 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="VF2Wrapper">
+				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/libVF2Wrapper.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/graphsim"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 VF2Wrapper"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="VF2Wrapper/fast">
+				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/libVF2Wrapper.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/graphsim"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 VF2Wrapper/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="CandidateLookupTree">
 				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/libCandidateLookupTree.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
@@ -532,6 +430,108 @@
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 CandidateLookupTree/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="QuantumLatticeRenormalisation">
+				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/QuantumLatticeRenormalisation" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/graphsim"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 QuantumLatticeRenormalisation"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="QuantumLatticeRenormalisation/fast">
+				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/QuantumLatticeRenormalisation" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/graphsim"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 QuantumLatticeRenormalisation/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_gen_distribution">
+				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/test_gen_distribution" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/graphsim"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 test_gen_distribution"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_gen_distribution/fast">
+				<Option output="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/test_gen_distribution" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/graphsim"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 test_gen_distribution/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Makefile&quot;  VERBOSE=1 clean"/>
@@ -797,8 +797,8 @@
 			</Target>
 		</Build>
 		<Unit filename="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/CandidateLookupTree.cpp">
-			<Option target="QuantumLatticeRenormalisation"/>
 			<Option target="CandidateLookupTree"/>
+			<Option target="QuantumLatticeRenormalisation"/>
 		</Unit>
 		<Unit filename="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/CandidateLookupTree.hpp">
 			<Option target="CandidateLookupTree"/>
@@ -816,6 +816,12 @@
 			<Option target="Graph"/>
 		</Unit>
 		<Unit filename="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Graph/CartesianGraph.hpp">
+			<Option target="Graph"/>
+		</Unit>
+		<Unit filename="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Graph/DiamondGraph.cpp">
+			<Option target="Graph"/>
+		</Unit>
+		<Unit filename="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Graph/DiamondGraph.h">
 			<Option target="Graph"/>
 		</Unit>
 		<Unit filename="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/Graph/operators.cpp">
@@ -853,8 +859,8 @@
 			<Option target="test_gen_distribution"/>
 		</Unit>
 		<Unit filename="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/VF2Wrapper.cpp">
-			<Option target="QuantumLatticeRenormalisation"/>
 			<Option target="VF2Wrapper"/>
+			<Option target="QuantumLatticeRenormalisation"/>
 		</Unit>
 		<Unit filename="/home/voidlogic/CLionProjects/QuantumLatticeRenormalisation/VF2Wrapper.hpp">
 			<Option target="VF2Wrapper"/>

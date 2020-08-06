@@ -4,8 +4,7 @@ project(QuantumLatticeRenormalisation)
 set(CMAKE_CXX_STANDARD 14)
 
 # Debug mode
-SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g")
-
+SET(CMAKE_BUILD_TYPE Debug)
 
 # Graphsim import
 set(GRAPHSIM_DIR ${CMAKE_SOURCE_DIR}/GraphSim)
@@ -20,7 +19,7 @@ find_package(Boost 1.57.0 COMPONENTS system filesystem REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
 
 # separate into library modules
-add_library(Graph Graph/CartesianGraph.cpp Graph/CartesianGraph.hpp Graph/operators.cpp Graph/structure_data.hpp)
+add_library(Graph Graph/CartesianGraph.cpp Graph/CartesianGraph.hpp Graph/operators.cpp Graph/structure_data.hpp Graph/DiamondGraph.cpp Graph/DiamondGraph.h)
 add_library(Foliation foliation.cpp foliation.hpp)
 add_library(Similarity similarity.cpp similarity.hpp)
 add_library(CandidateLookupTree CandidateLookupTree.cpp CandidateLookupTree.hpp)
@@ -33,8 +32,8 @@ add_library(GVWrapper GraphViz/gv_wrapper.cpp GraphViz/gv_wrapper.hpp)
 target_link_libraries(GVWrapper PUBLIC gvc)
 # combine libraries in executable
 add_executable(QuantumLatticeRenormalisation main.cpp
-        Foliation
-        Similarity
+#        Foliation
+ #       Similarity
         VF2Wrapper
         CandidateLookupTree
         Debug
