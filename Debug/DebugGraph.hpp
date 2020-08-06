@@ -3,6 +3,8 @@
 #define DEBUG_GRAPH_HPP
 
 #include <string>
+#include <iomanip>
+#include <ctime>
 #include "../Graph/CartesianGraph.hpp"
 
 
@@ -17,5 +19,8 @@ Graph 3: (0,1) (1,2) (3,2)
  */
 std::string print_edges_all_graphs(const graph_list_raw &g);
 
+std::string print_edges_all_graphs_reduced(const graph_list_raw &g);
+
+std::string get_formatted_datetime();
 
 #endif // DEBUG_GRAPH_HPP

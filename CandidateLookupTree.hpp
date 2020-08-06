@@ -2,8 +2,8 @@
 #ifndef CANDIDATE_LOOKUP_TREE_HPP
 #define CANDIDATE_LOOKUP_TREE_HPP
 
-#include "../common.hpp"
-#include "../Graph/structure_data.hpp"
+#include "common.hpp"
+#include "Graph/structure_data.hpp"
 #include "Graph/CartesianGraph.hpp"
 
 

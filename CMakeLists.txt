@@ -4,12 +4,11 @@ project(QuantumLatticeRenormalisation)
 set(CMAKE_CXX_STANDARD 14)
 
 # Debug mode
-SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g")
-
+SET(CMAKE_BUILD_TYPE Debug)
 
 # Graphsim import
 set(GRAPHSIM_DIR ${CMAKE_SOURCE_DIR}/GraphSim)
-add_library(graphsim ${GRAPHSIM_DIR}/graphsim.cpp ${GRAPHSIM_DIR}/loccliff.cpp ${GRAPHSIM_DIR}/stabilizer.cpp LatticeDistributionStatistics/test_gen_distribution.cpp)
+add_library(graphsim ${GRAPHSIM_DIR}/graphsim.cpp ${GRAPHSIM_DIR}/loccliff.cpp ${GRAPHSIM_DIR}/stabilizer.cpp experiment/test_gen_distribution.cpp)
 
 include_directories(graphsim)
 link_directories(graphsim)
@@ -27,6 +26,9 @@ add_library(CandidateLookupTree CandidateLookupTree.cpp CandidateLookupTree.hpp)
 add_library(Debug Debug/DebugGraph.cpp Debug/DebugGraph.hpp)
 add_library(VF2Wrapper VF2Wrapper.cpp VF2Wrapper.hpp)
 
+# experiments
+add_library(Experiment experiment/test_inv_measure_r_cell.cpp)
+
 # GraphViz
 
 add_library(GVWrapper GraphViz/gv_wrapper.cpp GraphViz/gv_wrapper.hpp)
@@ -38,9 +40,10 @@ add_executable(QuantumLatticeRenormalisation main.cpp
         VF2Wrapper
         CandidateLookupTree
         Debug
+        Experiment
         common.hpp)
-target_link_libraries(QuantumLatticeRenormalisation graphsim ${BOOST_LIBRARIES} Graph GVWrapper Debug Foliation Similarity)
+target_link_libraries(QuantumLatticeRenormalisation graphsim ${BOOST_LIBRARIES} Graph GVWrapper Debug Foliation Similarity Experiment)
 
-add_executable(test_gen_distribution LatticeDistributionStatistics/test_gen_distribution.cpp)
+add_executable(test_gen_distribution experiment/test_gen_distribution.cpp)
 
 add_subdirectory(googletest)
