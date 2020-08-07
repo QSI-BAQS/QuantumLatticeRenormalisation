@@ -27,7 +27,7 @@ add_library(Debug Debug/DebugGraph.cpp Debug/DebugGraph.hpp)
 add_library(VF2Wrapper VF2Wrapper.cpp VF2Wrapper.hpp)
 
 # experiments
-add_library(Experiment experiment/test_inv_measure_r_cell.cpp)
+add_library(Experiment experiment/test_inv_measure_r_cell.cpp experiment/combinatorics.cpp experiment/combinatorics.hpp)
 
 # GraphViz
 

@@ -2,6 +2,7 @@
 #include "../Graph/CartesianGraph.hpp"
 #include "../Graph/structure_data.hpp"
 #include "../Debug/DebugGraph.hpp"
+#include "combinatorics.hpp"
 #include <chrono>
 #include <fstream>
 #include <string>
@@ -9,7 +10,34 @@
 
 using namespace std::chrono;
 
+
+
+
+// Perform one inverted measurement of each type on the Raussendorf cell.
+// How many new graphs did we create? What properties do they have?
+
+void pred_inv_measure_r_cell() {
+    // Predictions
+
+    // Graph size (Y = Z, but X is bigger)
+    // 262142
+    std::cout << "Predicted Z graph-count: " << count_combinations_between_k(18, 1, 18)
+              << " (same for Y graph-count)" << std::endl;
+
+    double x_nodecount = 0;
+    double rcell_vertices = 18;
+    for (int i = 0; i < 18; ++i) {
+        x_nodecount += i * count_combinations(rcell_vertices, i);
+    }
+    // 2.35928e+06
+    std::cout << "Predicted X graph-count: " << x_nodecount << std::endl;
+
+
+}
+
+
 void exp_inv_measure_r_cell() {
+    // Experiment to compare with predictions
 
     // File IO
     std::string data_path = "experiment/data/";

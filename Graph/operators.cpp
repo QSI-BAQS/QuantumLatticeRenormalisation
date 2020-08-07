@@ -1,7 +1,6 @@
 
 #include "CartesianGraph.hpp"
 
-
 void CartesianGraph::orbital(vertex_ind index) {
     adj_iterator_t a_inner, a_inner_end, a_outer, a_end;
     vertex_t a_vertex = vertex(index, g);
@@ -78,7 +77,7 @@ std::list<std::list<std::list<int>>> combinations_forall_K(int N) {
 }
 
 // Inverted measurement operators
-// Non-cartesian approach
+// Non-cartesian approach - ie. we don't consider coordinates. CartesianGraph is not enforcing a coordinate model!
 graph_list_raw CartesianGraph::inverted_Z_measure() const {
     // temporary reference copy
     graph_t g_temp(g);
@@ -141,7 +140,7 @@ graph_list_raw CartesianGraph::inverted_Y_measure() const {
 }
 
 graph_list_raw CartesianGraph::inverted_X_measure() const {
-    // Again, similar to Y_measure, except we get an additional factor of growth in this one.
+    // Again, similar to Y_measure, except we get an additional factor of growth.
     // Since, for any permutation there can be one special neighbor among any of A's neighbors
     // we get additional results, and need to have another corresponding loop.
     // Since order matters for orbitals,
