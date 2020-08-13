@@ -78,11 +78,11 @@ std::list<std::list<std::list<int>>> combinations_forall_K(int N) {
 
 // Inverted measurement operators
 // Non-cartesian approach - ie. we don't consider coordinates. CartesianGraph is not enforcing a coordinate model!
-graph_list_raw CartesianGraph::inverted_Z_measure() const {
+graph_list_raw_t CartesianGraph::inverted_Z_measure() const {
     // temporary reference copy
     graph_t g_temp(g);
     // Output data structure
-    graph_list_raw out;
+    graph_list_raw_t out;
     // Add node A - won't have coordinates in this version
     auto A = add_vertex(g_temp);
 
@@ -105,14 +105,14 @@ graph_list_raw CartesianGraph::inverted_Z_measure() const {
     return out;
 }
 
-graph_list_raw CartesianGraph::inverted_Y_measure() const {
+graph_list_raw_t CartesianGraph::inverted_Y_measure() const {
     // Similar to Z_measure, except we perform an orbital after we add edges
     // Would be pretty complex to reduce code duplication here... Should be fine.
 
     // temporary reference copy
     graph_t g_temp(g);
     // Output data structure
-    graph_list_raw out;
+    graph_list_raw_t out;
     // Add node A - won't have coordinates in this version
     auto A = add_vertex(g_temp);
 
@@ -139,7 +139,7 @@ graph_list_raw CartesianGraph::inverted_Y_measure() const {
     return out;
 }
 
-graph_list_raw CartesianGraph::inverted_X_measure() const {
+graph_list_raw_t CartesianGraph::inverted_X_measure() const {
     // Again, similar to Y_measure, except we get an additional factor of growth.
     // Since, for any permutation there can be one special neighbor among any of A's neighbors
     // we get additional results, and need to have another corresponding loop.
@@ -149,7 +149,7 @@ graph_list_raw CartesianGraph::inverted_X_measure() const {
     // temporary reference copy
     graph_t g_temp(g);
     // Output data structure
-    graph_list_raw out;
+    graph_list_raw_t out;
     // Add node A - won't have coordinates in this version
     auto A = add_vertex(g_temp);
 

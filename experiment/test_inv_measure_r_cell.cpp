@@ -1,7 +1,7 @@
 
 #include "../Graph/CartesianGraph.hpp"
 #include "../Graph/structure_data.hpp"
-#include "../Debug/DebugGraph.hpp"
+#include "../Print/DebugGraph.hpp"
 #include "combinatorics.hpp"
 #include <chrono>
 #include <fstream>
@@ -56,7 +56,7 @@ void exp_inv_measure_r_cell() {
     // inverted Z-measure
     cg1.load_edges(r_cell_edges);
     auto start = high_resolution_clock::now();
-    graph_list_raw inv_z_plmo = cg1.inverted_Z_measure();
+    graph_list_raw_t inv_z_plmo = cg1.inverted_Z_measure();
     auto stop = high_resolution_clock::now();
 
     auto duration = duration_cast<milliseconds>(stop - start);
@@ -68,7 +68,7 @@ void exp_inv_measure_r_cell() {
 
     cg2.load_edges(r_cell_edges);
     start = high_resolution_clock::now();
-    graph_list_raw inv_y_plmo = cg2.inverted_Y_measure();
+    graph_list_raw_t inv_y_plmo = cg2.inverted_Y_measure();
     stop = high_resolution_clock::now();
     duration = duration_cast<milliseconds>(stop - start);
     std::cout << "inv Y measure: " << duration.count() << " milliseconds. " << std::endl;
@@ -82,7 +82,7 @@ void exp_inv_measure_r_cell() {
 
     // cg3.load_edges(r_cell_edges);
     // start = high_resolution_clock::now();
-    // graph_list_raw inv_x_plmo = cg3.inverted_X_measure();
+    // graph_list_raw_t inv_x_plmo = cg3.inverted_X_measure();
     // stop = high_resolution_clock::now();
     // duration = duration_cast<milliseconds>(stop - start);
     // std::cout << "inv X measure: " << duration.count() << " milliseconds. ";

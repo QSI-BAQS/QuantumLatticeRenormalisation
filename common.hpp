@@ -65,8 +65,8 @@ typedef boost::graph_traits<graph_t>::adjacency_iterator adj_iterator_t;
 typedef std::list<vertex_t> vertex_list_t;
 typedef std::list<edge_t> edge_list_t;
 typedef std::list<edge_io_t> edge_io_list_t;
-typedef std::list<graph_t> graph_list_raw;
-typedef std::list<CartesianGraph> graph_list;
+typedef std::list<graph_t> graph_list_raw_t;
+typedef std::list<CartesianGraph> graph_list_t;
 
 
 #endif // COMMON_HPP

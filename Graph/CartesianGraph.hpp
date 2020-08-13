@@ -90,11 +90,11 @@ public:
     void orbital(vertex_ind index);
 
     // inverted PLMOs
-    graph_list_raw inverted_X_measure() const;
+    graph_list_raw_t inverted_X_measure() const;
 
-    graph_list_raw inverted_Y_measure() const;
+    graph_list_raw_t inverted_Y_measure() const;
 
-    graph_list_raw inverted_Z_measure() const;
+    graph_list_raw_t inverted_Z_measure() const;
 
     // containing the BGL graph
     graph_t g;

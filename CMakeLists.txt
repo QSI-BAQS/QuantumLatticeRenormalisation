@@ -3,7 +3,7 @@ project(QuantumLatticeRenormalisation)
 
 set(CMAKE_CXX_STANDARD 14)
 
-# Debug mode
+# Print mode
 SET(CMAKE_BUILD_TYPE Debug)
 
 # Graphsim import
@@ -23,7 +23,7 @@ add_library(Graph Graph/CartesianGraph.cpp Graph/CartesianGraph.hpp Graph/operat
 add_library(Foliation foliation.cpp foliation.hpp)
 add_library(Similarity similarity.cpp similarity.hpp)
 add_library(CandidateLookupTree CandidateLookupTree.cpp CandidateLookupTree.hpp)
-add_library(Debug Debug/DebugGraph.cpp Debug/DebugGraph.hpp)
+add_library(Print Print/DebugGraph.cpp Print/DebugGraph.hpp Print/json.hpp)
 add_library(VF2Wrapper VF2Wrapper.cpp VF2Wrapper.hpp)
 
 # experiments
@@ -39,10 +39,10 @@ add_executable(QuantumLatticeRenormalisation main.cpp
         Similarity
         VF2Wrapper
         CandidateLookupTree
-        Debug
+        Print
         Experiment
         common.hpp)
-target_link_libraries(QuantumLatticeRenormalisation graphsim ${BOOST_LIBRARIES} Graph GVWrapper Debug Foliation Similarity Experiment)
+target_link_libraries(QuantumLatticeRenormalisation graphsim ${BOOST_LIBRARIES} Graph GVWrapper Print Foliation Similarity Experiment)
 
 add_executable(test_gen_distribution experiment/test_gen_distribution.cpp)
 

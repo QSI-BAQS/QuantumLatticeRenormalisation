@@ -6,13 +6,24 @@ std::string print_edges(const graph_t &g) {
     edge_iterator_t e_start, e_end;
     boost::tie(e_start, e_end) = edges(g);
     for (; e_start != e_end; ++e_start)
+        out += std::to_string(source(*e_start, g))
+               + "," + std::to_string(target(*e_start, g)) + " ";
+    return out;
+}
+
+std::string print_edges_reduced(const graph_t &g) {
+    std::string out;
+    edge_iterator_t e_start, e_end;
+    boost::tie(e_start, e_end) = edges(g);
+    for (; e_start != e_end; ++e_start)
         out += "(" + std::to_string(source(*e_start, g))
                + "," + std::to_string(target(*e_start, g)) + ") ";
 
     return out;
 }
 
-std::string print_edges_all_graphs(const graph_list_raw &g) {
+
+std::string print_edges_all_graphs(const graph_list_raw_t &g) {
     std::string out;
     int i = 1;
     for (const auto &graph : g) {
@@ -28,14 +39,14 @@ std::string print_edges_all_graphs(const graph_list_raw &g) {
     return out;
 }
 
-std::string print_edges_all_graphs_reduced(const graph_list_raw &g) {
+std::string print_edges_all_graphs_reduced(const graph_list_raw_t &g) {
     // Don't mark graph number and no brackets.
     std::string out;
     for (const auto &graph : g) {
         edge_iterator_t e_start, e_end;
         boost::tie(e_start, e_end) = edges(graph);
         for (; e_start != e_end; ++e_start)
-            out += " " + std::to_string(source(*e_start, graph))
+            out += std::to_string(source(*e_start, graph))
                    + "," + std::to_string(target(*e_start, graph)) + " ";
         out += "\n";
     }
@@ -52,4 +63,12 @@ std::string get_formatted_datetime() {
     auto str = oss.str();
 
     return str;
+}
+
+void writeout_graph(const graph_t &g, const std::string &filepath) {
+
+}
+
+void writeout_graph_with_coords(const graph_t &g, const std::string &filepath) {
+
 }
