@@ -8,7 +8,13 @@
 #include "experiment/test_inv_measure_r_cell.cpp"
 int main() {
 
+    auto list = load_graphs("experiment/data/inv_z_measure_r_cell 14-08-2020 10-11-48.txt");
 
+
+
+
+
+    // exp_inv_measure_r_cell();
     // pred_inv_measure_r_cell();
     CartesianGraph cg({3, 3, 3});
 

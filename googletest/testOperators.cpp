@@ -2,7 +2,7 @@
 
 #include "gtest/gtest.h"
 #include "../Graph/CartesianGraph.hpp"
-#include "../Debug/DebugGraph.hpp"
+#include "../Print/DebugGraph.hpp"
 
 TEST(operators, combinations_forall_K) {
     const char *target = "0 \n"
@@ -45,7 +45,7 @@ TEST(operators, inverted_Z_measure) {
     CartesianGraph cg(3);
     cg.load_edges({{0, 1},
                    {1, 2}});
-    graph_list_raw inv_z_lpmo = cg.inverted_Z_measure();
+    graph_list_raw_t inv_z_lpmo = cg.inverted_Z_measure();
     int i = 1;
     source_o = print_edges_all_graphs(inv_z_lpmo);
 
@@ -64,7 +64,7 @@ TEST(operators, inverted_Y_measure) {
     CartesianGraph cg(3);
     cg.load_edges({{0, 1},
                    {1, 2}});
-    graph_list_raw inv_y_lpmo = cg.inverted_Y_measure();
+    graph_list_raw_t inv_y_lpmo = cg.inverted_Y_measure();
     int i = 1;
     source_o = print_edges_all_graphs(inv_y_lpmo);
 
@@ -87,7 +87,7 @@ TEST(operators, inverted_X_measure) {
     CartesianGraph cg(3);
     cg.load_edges({{0, 1},
                    {1, 2}});
-    graph_list_raw inv_x_lpmo = cg.inverted_X_measure();
+    graph_list_raw_t inv_x_lpmo = cg.inverted_X_measure();
     auto source_o = print_edges_all_graphs(inv_x_lpmo);
     vec3d vec({2, 2, 2});
     ASSERT_EQ(target_o, source_o);

@@ -13,4 +13,4 @@ include_directories(${gtest_SOURCE_DIR} ${GTEST_SOURCE_DIR})
 # 'Google_Tests_run' is the target name
 # 'test1.cpp tests2.cpp' are source files with tests
 add_executable(Google_Tests_run testGraph.cpp testOperators.cpp)
-target_link_libraries(Google_Tests_run gtest gtest_main Graph VF2Wrapper Debug)
+target_link_libraries(Google_Tests_run gtest gtest_main Graph VF2Wrapper Print)

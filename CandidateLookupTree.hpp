@@ -76,7 +76,7 @@ class CandidateLookupTree {
 
     // get a measurement pattern from a specified hash.
     // will return an empty list if there is no match.
-    std::list<std::pair<pauli_operator, int>> get_measurement_pattern(std::string hash);
+    std::list<std::pair<pauli_operator, int>> get_measurement_pattern(hash_t hash);
 
 
 private:

@@ -23,15 +23,25 @@ void CandidateLookupTree::insert_graph(const Candidate &c) {
 
 int CandidateLookupTree::find_graph(const graph_t &g) {
     Candidate c(g);
-
+    hash_t hash = std::hash<candidate_t>{}(c);
+    return find_hash(hash);
 }
 
 int CandidateLookupTree::find_hash(hash_t hash) {
-    hashed_candidate_t lookup = candidate_map.find(hash);
+    auto lookup = candidate_map.find(hash);
+    if (lookup == candidate_map.end()) {
+        return 0;
+    }
+    return lookup->second.id;
 }
 
-std::list<std::pair<pauli_operator, int>> CandidateLookupTree::get_measurement_pattern(std::string hash) {
-    return std::list<std::pair<pauli_operator, int>>();
+std::list<std::pair<pauli_operator, int>> CandidateLookupTree::get_measurement_pattern(hash_t hash) {
+    auto lookup = candidate_map.find(hash);
+    if (lookup == candidate_map.end()) {
+        return std::list<std::pair<pauli_operator, int>>();
+    }
+    return lookup->second.measurement_pattern;
+
 }
 
 CandidateLookupTree::CandidateLookupTree() {
